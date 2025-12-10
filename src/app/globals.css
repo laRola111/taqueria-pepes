@@ -1,35 +1,54 @@
 @import "tailwindcss";
 
 @theme inline {
-  /* Paleta TAQUERÍA PEPES */
-  --color-primary: #ec6629;  /* Naranja Principal */
-  --color-secondary: #e8db2f; /* Amarillo */
-  --color-accent: #d83415;    /* Rojo Fuerte (Hover/CTA) */
-  --color-soft: #e25851;      /* Salmón (Detalles) */
-  --color-dark: #1a1a1a;      /* Texto Oscuro */
-  --color-light: #ffffff;     /* Fondo Limpio */
+  /* Paleta TAQUERÍA PEPES - Más vibrante */
+  --color-primary: #ec6629;
+  --color-primary-dark: #d83415;
+  --color-secondary: #e8db2f;
+  --color-dark: #1a1a1a;
+  --color-light: #fdfbf7; /* Crema muy suave, no blanco clínico */
 
-  /* Fuentes (Las mismas variables para no romper código) */
   --font-heading: var(--font-fredoka);
   --font-body: var(--font-inter);
   
-  /* Sombras estilo "Sticker" o Pop */
-  --shadow-card: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
-  --shadow-pop: 4px 4px 0px var(--color-primary); 
+  --shadow-pepes: 8px 8px 0px 0px #1a1a1a; /* Sombra dura estilo Pop Art */
 }
 
 :root {
-  --background: #ffffff;
-  --foreground: #1a1a1a;
+  --background: var(--color-light);
+  --foreground: var(--color-dark);
 }
 
 body {
   background-color: var(--background);
   color: var(--foreground);
   font-family: var(--font-body);
+  position: relative;
 }
 
-/* Títulos con la fuente gordita */
+/* TEXTURA DE RUIDO (Sutil) */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.05'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 50;
+  opacity: 0.4;
+}
+
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-heading);
+}
+
+/* Utilidad para ocultar barra de scroll en móviles */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }

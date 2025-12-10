@@ -8,6 +8,9 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-pepes-orange: #ff5500;
+  --color-pepes-black: #111111;
+  --color-pepes-white: #ffffff;
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }

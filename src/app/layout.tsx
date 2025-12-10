@@ -1,21 +1,23 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Fredoka, Inter } from "next/font/google";
 import "./globals.css";
 import { LanguageProvider } from "@/context/LanguageContext";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const fredoka = Fredoka({
   subsets: ["latin"],
+  variable: "--font-fredoka",
+  display: "swap",
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const inter = Inter({
   subsets: ["latin"],
+  variable: "--font-inter",
+  display: "swap",
 });
 
 export const metadata: Metadata = {
-  title: "Taquería Pepes | Sabor que Explota",
-  description: "Tacos, Tortas, Gorditas - Estilo Pepes",
+  title: "Taquería Pepes",
+  description: "Sabor que explota - Tacos, Tortas y Gorditas",
 };
 
 export default function RootLayout({
@@ -24,11 +26,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="es">
-      <body
-        className={`antialiased bg-pepes-black text-white ${geistSans.variable} ${geistSans.className}`}
-      >
-        <LanguageProvider>{children}</LanguageProvider>
+    <html lang="es" className="scroll-smooth">
+      <body className={`${fredoka.variable} ${inter.variable} antialiased`}>
+        <LanguageProvider>
+          {children}
+        </LanguageProvider>
       </body>
     </html>
   );

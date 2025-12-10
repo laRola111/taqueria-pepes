@@ -4,7 +4,7 @@ import { useLanguage } from "@/context/LanguageContext";
 import { motion } from "framer-motion";
 
 export function Marquee() {
-  const { dict } = useLanguage();
+  const { t } = useLanguage();
 
   return (
     <div className="w-full bg-pepes-orange py-4 overflow-hidden -rotate-1 transform origin-left md:scale-110">
@@ -16,7 +16,7 @@ export function Marquee() {
         >
           {Array.from({ length: 4 }).map((_, i) => (
             <span key={i} className="flex items-center gap-8">
-              {dict.marquee.text} <span>•</span>
+              {t.marquee.items} <span>•</span>
             </span>
           ))}
         </motion.div>
@@ -27,7 +27,7 @@ export function Marquee() {
         >
           {Array.from({ length: 4 }).map((_, i) => (
             <span key={i} className="flex items-center gap-8">
-              {dict.marquee.text} <span>•</span>
+              {t.marquee.items} <span>•</span>
             </span>
           ))}
         </motion.div>

@@ -1,29 +1,35 @@
 @import "tailwindcss";
 
+@theme inline {
+  /* Paleta TAQUERÍA PEPES */
+  --color-primary: #ec6629;  /* Naranja Principal */
+  --color-secondary: #e8db2f; /* Amarillo */
+  --color-accent: #d83415;    /* Rojo Fuerte (Hover/CTA) */
+  --color-soft: #e25851;      /* Salmón (Detalles) */
+  --color-dark: #1a1a1a;      /* Texto Oscuro */
+  --color-light: #ffffff;     /* Fondo Limpio */
+
+  /* Fuentes (Las mismas variables para no romper código) */
+  --font-heading: var(--font-fredoka);
+  --font-body: var(--font-inter);
+  
+  /* Sombras estilo "Sticker" o Pop */
+  --shadow-card: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --shadow-pop: 4px 4px 0px var(--color-primary); 
+}
+
 :root {
   --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --color-pepes-orange: #ff5500;
-  --color-pepes-black: #111111;
-  --color-pepes-white: #ffffff;
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --foreground: #1a1a1a;
 }
 
 body {
-  background: var(--background);
+  background-color: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-body);
+}
+
+/* Títulos con la fuente gordita */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
 }

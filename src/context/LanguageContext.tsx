@@ -6,7 +6,7 @@ import { dictionary, Language } from "@/lib/dictionary";
 interface LanguageContextType {
   language: Language;
   toggleLanguage: () => void;
-  dict: (typeof dictionary)["en"];
+  t: (typeof dictionary)["en"];
 }
 
 const LanguageContext = createContext<LanguageContextType | undefined>(
@@ -20,10 +20,10 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
     setLanguage((prev) => (prev === "es" ? "en" : "es"));
   };
 
-  const dict = dictionary[language];
+  const t = dictionary[language];
 
   return (
-    <LanguageContext.Provider value={{ language, toggleLanguage, dict }}>
+    <LanguageContext.Provider value={{ language, toggleLanguage, t }}>
       {children}
     </LanguageContext.Provider>
   );

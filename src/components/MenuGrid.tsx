@@ -1,106 +1,79 @@
 "use client";
 
-import { useLanguage } from "@/context/LanguageContext";
 import { motion } from "framer-motion";
+import { Star } from "lucide-react";
+import { useLanguage } from "@/context/LanguageContext";
 
 export function MenuGrid() {
-  const { dict } = useLanguage();
+  const { t } = useLanguage();
 
-  const menuItems = [
-    {
-      collection: dict.menu.tacos,
-      items: [
-        {
-          name: "Asada Boom",
-          price: "$35",
-          desc: "Steak, onion, cilantro, atomic salsa",
-        },
-        {
-          name: "Pastor Blast",
-          price: "$30",
-          desc: "Marinated pork, pineapple, electric vibe",
-        },
-      ],
-    },
-    {
-      collection: dict.menu.tortas,
-      items: [
-        {
-          name: "Torta Titan",
-          price: "$95",
-          desc: "Huge bread, milanesa, cheese overload",
-        },
-        {
-          name: "Pepes Special",
-          price: "$110",
-          desc: "Everything we have + secret sauce",
-        },
-      ],
-    },
-    {
-      collection: dict.menu.gorditas,
-      items: [
-        {
-          name: "Chicharron Power",
-          price: "$40",
-          desc: "Pressed pork skin, green sauce",
-        },
-        { name: "Queso Storm", price: "$35", desc: "Melting cheese, rajitas" },
-      ],
-    },
+  // Mapeamos las categorías del diccionario a un array para poder iterar
+  const categories = [
+    { id: 'tacos', ...t.menu.categories.tacos, icon: "🌮" },
+    { id: 'tortas', ...t.menu.categories.tortas, icon: "🥪" },
+    { id: 'gorditas', ...t.menu.categories.gorditas, icon: "🫓" },
+    { id: 'specialties', ...t.menu.categories.specialties, icon: "🔥" },
   ];
 
   return (
-    <section className="py-24 px-4 bg-pepes-black relative overflow-hidden">
-      <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_top_right,_var(--tw-gradient-stops))] from-pepes-orange/10 to-transparent pointer-events-none" />
+    <section id="menu" className="py-24 bg-white relative">
+      <div className="container mx-auto px-4 md:px-8">
+        
+        {/* Encabezado */}
+        <div className="text-center mb-16 space-y-4">
+          <h2 className="text-pepes-orange font-bold text-xl uppercase tracking-widest">
+            {t.menu.title}
+          </h2>
+          <h3 className="font-heading font-black text-5xl md:text-6xl text-pepes-dark">
+            {t.menu.subtitle}
+          </h3>
+          <div className="w-24 h-2 bg-pepes-yellow mx-auto rounded-full mt-4" />
+        </div>
 
-      <div className="container mx-auto">
-        <motion.h2
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="text-5xl md:text-7xl font-black text-white text-center mb-16 uppercase italic tracking-tighter"
-        >
-          {dict.menu.title}
-        </motion.h2>
-
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {menuItems.map((category, idx) => (
+        {/* Grid de Tarjetas "Pop" */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {categories.map((cat, i) => (
             <motion.div
-              key={idx}
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
+              key={cat.id}
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: idx * 0.2 }}
-              className="bg-white rounded-3xl p-6 relative group hover:-translate-y-2 transition-transform duration-300 shadow-[0_10px_0_0_#FF5500]"
+              transition={{ delay: i * 0.1 }}
+              whileHover={{ y: -10 }}
+              className="bg-white border-2 border-gray-100 rounded-[2rem] p-8 flex flex-col items-center text-center shadow-lg hover:border-pepes-orange hover:shadow-[0_10px_0_0_#ec6629] transition-all duration-300 group"
             >
-              <div className="absolute top-4 right-4 bg-pepes-black text-white text-xs font-bold px-3 py-1 rounded-full uppercase">
-                Series {idx + 1}
+              {/* Icono Gigante */}
+              <div className="text-6xl mb-6 bg-pepes-light w-24 h-24 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
+                {cat.icon}
               </div>
-              <h3 className="text-3xl font-black text-pepes-black uppercase mb-6 border-b-4 border-pepes-orange pb-2 inline-block">
-                {category.collection}
-              </h3>
 
-              <div className="space-y-6">
-                {category.items.map((item, itemIdx) => (
-                  <div key={itemIdx} className="flex flex-col">
-                    <div className="flex justify-between items-baseline border-b border-gray-200 pb-2 mb-2 border-dashed">
-                      <span className="text-xl font-bold text-pepes-black uppercase">
-                        {item.name}
-                      </span>
-                      <span className="text-xl font-black text-pepes-orange">
-                        {item.price}
-                      </span>
-                    </div>
-                    <p className="text-gray-500 text-sm font-medium leading-tight">
-                      {item.desc}
-                    </p>
-                  </div>
-                ))}
+              <h4 className="font-heading font-bold text-3xl text-pepes-dark mb-3">
+                {cat.title}
+              </h4>
+              
+              <p className="text-gray-500 mb-6 flex-grow leading-relaxed">
+                {cat.desc}
+              </p>
+
+              <div className="w-full mt-auto">
+                <span className="block text-pepes-orange font-bold text-xl mb-4">
+                  {cat.price}
+                </span>
+                <button className="w-full py-3 rounded-xl font-bold bg-gray-100 text-pepes-dark group-hover:bg-pepes-dark group-hover:text-white transition-colors flex items-center justify-center gap-2">
+                  Pedir <Star size={16} className="fill-current" />
+                </button>
               </div>
             </motion.div>
           ))}
         </div>
+
+        {/* Botón Ver Todo */}
+        <div className="text-center mt-16">
+          <button className="text-pepes-dark font-bold text-lg border-b-2 border-pepes-orange pb-1 hover:text-pepes-orange transition-colors">
+            {t.menu.cta} →
+          </button>
+        </div>
+
       </div>
     </section>
   );

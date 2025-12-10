@@ -1,57 +1,89 @@
 "use client";
 
-import { useLanguage } from "@/context/LanguageContext";
 import { motion } from "framer-motion";
 import Image from "next/image";
+import { ArrowRight } from "lucide-react";
+import { useLanguage } from "@/context/LanguageContext";
 
 export function Hero() {
-  const { dict } = useLanguage();
+  const { t } = useLanguage();
 
   return (
-    <section className="relative min-h-[80vh] flex flex-col items-center justify-center overflow-hidden bg-pepes-black text-white pt-20">
-      {/* Background Gradient */}
-      <div className="absolute inset-0 bg-radial-gradient from-pepes-orange/20 to-transparent opacity-50 pointer-events-none" />
+    <section id="hero" className="relative min-h-[90vh] flex items-center justify-center overflow-hidden bg-pepes-light pt-20">
+      
+      {/* 1. FONDO DEGRADADO (Estilo "Explosión") */}
+      <div className="absolute inset-0 z-0">
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[150%] h-[150%] bg-[radial-gradient(circle,rgba(236,102,41,0.2)_0%,rgba(255,255,255,0)_70%)] animate-pulse-slow" />
+      </div>
 
-      <div className="container px-4 flex flex-col items-center text-center z-10">
-        <motion.h1
-          initial={{ scale: 0.8, opacity: 0 }}
-          animate={{ scale: 1, opacity: 1 }}
-          transition={{ duration: 0.5, ease: "backOut" }}
-          className="text-5xl md:text-8xl font-black uppercase tracking-tighter mb-8 text-transparent bg-clip-text bg-gradient-to-br from-pepes-orange to-white drop-shadow-lg"
+      <div className="container mx-auto px-4 grid md:grid-cols-2 gap-12 items-center relative z-10">
+        
+        {/* 2. TEXTO HERO (Izquierda) */}
+        <motion.div 
+          initial={{ opacity: 0, x: -50 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8, type: "spring" }}
+          className="text-center md:text-left"
         >
-          {dict.hero.headline}
-        </motion.h1>
+          <span className="inline-block py-1 px-3 rounded-full bg-pepes-yellow text-pepes-dark font-bold text-sm mb-4 border-2 border-pepes-dark shadow-[4px_4px_0px_0px_rgba(26,26,26,1)]">
+            🔥 Street Food Elevated
+          </span>
+          
+          <h1 className="font-heading font-black text-6xl md:text-8xl text-pepes-dark leading-[0.9] mb-6">
+            {t.hero.headline}
+          </h1>
+          
+          <p className="text-xl text-gray-600 font-medium mb-8 max-w-md mx-auto md:mx-0">
+            {t.hero.subheadline}
+          </p>
 
+          <motion.a 
+            href="#menu"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            className="inline-flex items-center gap-3 bg-pepes-orange text-white px-8 py-4 rounded-full font-bold text-xl shadow-[0_10px_20px_-5px_rgba(236,102,41,0.5)] hover:shadow-[0_15px_25px_-5px_rgba(236,102,41,0.6)] transition-all"
+          >
+            {t.hero.cta}
+            <ArrowRight size={24} />
+          </motion.a>
+        </motion.div>
+
+        {/* 3. IMAGEN FLOTANTE (Derecha) */}
         <motion.div
-          initial={{ y: 20, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ delay: 0.2, duration: 0.6 }}
-          className="relative w-[300px] h-[300px] md:w-[500px] md:h-[500px]"
+          initial={{ opacity: 0, scale: 0.8, rotate: 10 }}
+          animate={{ opacity: 1, scale: 1, rotate: 0 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          className="relative h-[400px] md:h-[600px] w-full flex items-center justify-center"
         >
+          {/* Círculo decorativo detrás */}
+          <div className="absolute w-[300px] h-[300px] md:w-[500px] md:h-[500px] bg-pepes-orange rounded-full opacity-10 blur-3xl" />
+          
+          {/* TACO FLOTANTE (Necesitas subir taco.png a public/) */}
           <motion.div
             animate={{ y: [0, -20, 0] }}
             transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }}
-            className="w-full h-full relative"
+            className="relative w-full h-full"
           >
-            <Image
-              src="/taco.png"
-              alt="Taco Pepes"
-              fill
-              className="object-contain drop-shadow-[0_20px_50px_rgba(255,85,0,0.3)]"
-              priority
-            />
+             {/* Usamos un placeholder visual hasta que tengas la foto real */}
+             <Image
+               src="/taco.png" // Asegúrate de tener esta imagen
+               alt="Taco Pepes"
+               fill
+               className="object-contain drop-shadow-2xl"
+               priority
+             />
+          </motion.div>
+
+          {/* Badge Flotante "Fresh" */}
+          <motion.div 
+            animate={{ rotate: [0, 10, 0] }}
+            transition={{ repeat: Infinity, duration: 5 }}
+            className="absolute top-10 right-10 bg-pepes-yellow text-pepes-dark w-24 h-24 rounded-full flex items-center justify-center font-black border-4 border-white shadow-xl rotate-12 z-20"
+          >
+            100%<br/>FRESH
           </motion.div>
         </motion.div>
 
-        <motion.button
-          initial={{ y: 20, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
-          className="mt-10 px-8 py-4 bg-pepes-orange text-white text-xl font-bold rounded-full shadow-[0_0_20px_rgba(255,85,0,0.6)] hover:shadow-[0_0_40px_rgba(255,85,0,0.8)] transition-shadow uppercase"
-        >
-          {dict.hero.cta}
-        </motion.button>
       </div>
     </section>
   );

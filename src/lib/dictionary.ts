@@ -163,14 +163,10 @@ export const dictionary = {
           { name: "Arroz Mexicano" },
           { name: "Frijoles" },
           { name: "Cebollitas Asadas" },
-          { name: "Papas Fritas" },
-          { name: "Chips y Salsa" },
         ],
         drinks: [
           { name: "Aguas Frescas" },
           { name: "Coca-Cola Mexicana" },
-          { name: "Jarritos" },
-          { name: "Sodas de Lata" },
         ]
       },
     },
@@ -379,14 +375,11 @@ export const dictionary = {
           { name: "Mexican Rice" },
           { name: "Refried Beans" },
           { name: "Grilled Onions" },
-          { name: "French Fries" },
-          { name: "Chips & Salsa" },
         ],
         drinks: [
           { name: "Aguas Frescas" },
           { name: "Mexican Coke" },
           { name: "Jarritos" },
-          { name: "Canned Sodas" },
         ]
       },
     },

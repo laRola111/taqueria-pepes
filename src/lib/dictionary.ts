@@ -11,150 +11,140 @@ export const dictionary = {
       cta: "Pedir Ahora",
     },
     hero: {
-      headline: "SABOR QUE EXPLOTA",
-      subheadline: "Tacos, Tortas y Gorditas con el auténtico sazón callejero, pero elevado.",
+      headline: "TAQUERÍA PEPE'S ATX",
+      subheadline: "Auténtico sabor de trompo y tortillas hechas a mano.",
       cta: "Ver Menú",
     },
-    marquee: {
-      items: [
-        "Pastor", "Bistec", "Suadero", "Campechanos", 
-        "Gringas", "Chorizo", "Tripa", "Lengua", 
-        "Salsas Caseras", "Aguas Frescas"
-      ]
-    },
-    about: {
-      pretitle: "Nuestra Filosofía",
-      title: "No es solo comida, es energía",
-      description: "En Taquería Pepes rompemos las reglas. No somos la típica taquería rústica. Somos rápidos, somos frescos y nuestro sabor es intenso. Usamos ingredientes de primera para crear combinaciones que despiertan tus sentidos.",
-      stats: [
-        { value: "+10", label: "Salsas Únicas" },
-        { value: "100%", label: "Carne Fresca" },
-        { value: "24/7", label: "Pasión" }
-      ]
-    },
     menu: {
-      title: "Elige tu Arma",
-      subtitle: "Nuestras Especialidades",
-      categories: {
-        tacos: {
-          title: "Tacos",
-          desc: "Tortilla de maíz recién hecha, carne jugosa y tu elección de verdura.",
-          price: "Desde $2.50"
-        },
-        tortas: {
-          title: "Tortas",
-          desc: "El gigante de la casa. Bolillo crujiente, frijoles, aguacate y mucha carne.",
-          price: "Desde $8.99"
-        },
-        gorditas: {
-          title: "Gorditas",
-          desc: "Masa de maíz rellena de chicharrón prensado o tu guiso favorito con queso.",
-          price: "Desde $4.50"
-        },
-        specialties: {
-          title: "Especialidades",
-          desc: "Gringas, Volcanes y Quesadillas gigantes para los que tienen mucha hambre.",
-          price: "Varios Precios"
-        }
+      title: "Nuestro Menú",
+      subtitle: "Sabor Que Manda",
+      // Aquí están las promociones clave del análisis (La "Estrella Amarilla")
+      specials: [
+        { title: "¡JUEVES 2x1!", desc: "En Tacos al Pastor. La promo favorita de la casa." },
+        { title: "Sábado y Domingo", desc: "Menudo y Barbacoa (Hasta agotar existencia)." }
+      ],
+      // Lista de carnes disponibles para los antojitos
+      meats: {
+        title: "Elige tu Carne",
+        items: [
+          "Pastor (La Especialidad)", "Bistec", "Suadero", "Campechano", 
+          "Chorizo", "Tripa", "Lengua", "Cabeza", "Pollo", "Carnitas"
+        ]
       },
+      // Categorías organizadas según el layout descrito
+      categories: [
+        {
+          id: "antojitos",
+          title: "Lo Mero Bueno",
+          // Usamos la imagen principal que subiste
+          image: "/platillos/image_a2ef7c.png", 
+          items: [
+            { name: "Tacos", desc: "Tortilla recién hecha, cebolla y cilantro", price: "$3.50" },
+            { name: "Chilaquiles", desc: "Verdes o Rojos. Con huevo o carne", price: "$12.00" },
+            { name: "Burritos", desc: "El gigante: frijol, arroz, queso y carne", price: "$10.00" },
+            { name: "Gorditas", desc: "Rellenas de chicharrón o tu guiso favorito", price: "$4.50" },
+            { name: "Sopes", desc: "Masa pellizcada con frijol y queso", price: "$4.50" },
+            { name: "Quesadillas", desc: "Maíz o Harina, con mucho queso", price: "$4.00" },
+            { name: "Tortas", desc: "Bolillo crujiente, aguacate y mayonesa", price: "$9.00" }
+          ]
+        },
+        {
+          id: "fin_semana",
+          title: "Solo Fines de Semana",
+          // Usamos una de las fotos de WhatsApp como referencia visual
+          image: "/platillos/WhatsApp Image 2025-12-12 at 6.06.48 PM.jpeg",
+          items: [
+            { name: "Menudo", desc: "Pancita tradicional con grano. Incluye tortillas.", price: "$14.00" },
+            { name: "Barbacoa", desc: "De Res o Chivo. Por taco o por libra.", price: "$16.00" },
+            { name: "Consomé", desc: "Caldo reconfortante de barbacoa", price: "$5.00" }
+          ]
+        },
+        {
+          id: "extras",
+          title: "Por Kilo y Eventos",
+          image: "/platillos/WhatsApp Image 2025-12-12 at 6.07.47 PM.jpeg",
+          items: [
+            { name: "Venta por Libra", desc: "Carne lista para llevar. Incluye salsas.", price: "Cotizar" },
+            { name: "Taquizas", desc: "Llevamos el trompo a tu evento.", price: "Cotizar" }
+          ]
+        }
+      ],
       cta: "Ver Menú Completo"
     },
-    testimonials: {
-      title: "Lo que dice la banda",
-      reviews: [
-        { name: "Alex R.", text: "¡El pastor es de otro planeta! Y la salsa naranja pica rico." },
-        { name: "Sarah M.", text: "Me encanta el ambiente, es súper moderno y los tacos siempre salen calientes." },
-        { name: "Diego F.", text: "Las gorditas de chicharrón son mi adicción. ¡Muy recomendados!" }
-      ]
-    },
     location: {
-      title: "Cáele a Pepes",
+      title: "Visítanos",
       addressTitle: "Dirección",
-      address: "123 Flavor St, Food City, TX 78702", // Ajusta esto después
+      address: "Austin, TX 78702", 
       hoursTitle: "Horario",
-      hours: "Lun - Dom: 10:00 AM - 11:00 PM",
+      hours: "Lun - Dom: 9:00 AM - 10:00 PM",
       contactTitle: "Contacto",
       phone: "(512) 555-0199"
     },
     footer: {
-      rights: "Todos los derechos reservados."
+        rights: "Todos los derechos reservados."
     }
   },
+  // Versión en Inglés (Espejo exacto para no romper el código)
   en: {
-    navbar: {
-      home: "Home",
-      menu: "Menu",
-      location: "Location",
-      cta: "Order Now",
-    },
-    hero: {
-      headline: "EXPLOSIVE FLAVOR",
-      subheadline: "Tacos, Tortas, and Gorditas with authentic street style, leveled up.",
-      cta: "View Menu",
-    },
-    marquee: {
-      items: [
-        "Marinated Pork", "Steak", "Brisket", "Mixed", 
-        "Quesadillas", "Chorizo", "Tripe", "Beef Tongue", 
-        "Homemade Salsas", "Fresh Waters"
-      ]
-    },
-    about: {
-      pretitle: "Our Philosophy",
-      title: "It's not just food, it's energy",
-      description: "At Taquería Pepes we break the rules. We are not your typical rustic taco spot. We are fast, we are fresh, and our flavor is intense. We use premium ingredients to create combinations that wake up your senses.",
-      stats: [
-        { value: "+10", label: "Unique Salsas" },
-        { value: "100%", label: "Fresh Meat" },
-        { value: "24/7", label: "Passion" }
-      ]
-    },
+    navbar: { home: "Home", menu: "Menu", location: "Location", cta: "Order Now" },
+    hero: { headline: "PEPE'S TAQUERIA ATX", subheadline: "Authentic street style with handmade tortillas.", cta: "View Menu" },
     menu: {
-      title: "Choose Your Weapon",
-      subtitle: "Our Specialties",
-      categories: {
-        tacos: {
-          title: "Tacos",
-          desc: "Freshly made corn tortilla, juicy meat, and your choice of toppings.",
-          price: "From $2.50"
-        },
-        tortas: {
-          title: "Tortas",
-          desc: "The house giant. Crispy bread, beans, avocado, and lots of meat.",
-          price: "From $8.99"
-        },
-        gorditas: {
-          title: "Gorditas",
-          desc: "Corn dough stuffed with pressed pork rind or your favorite stew with cheese.",
-          price: "From $4.50"
-        },
-        specialties: {
-          title: "Specialties",
-          desc: "Gringas, Volcanes, and giant Quesadillas for those with a big appetite.",
-          price: "Various Prices"
-        }
+      title: "Our Menu",
+      subtitle: "Real Mexican Flavor",
+      specials: [
+        { title: "THURSDAY 2x1!", desc: "Al Pastor Tacos. House favorite promo." },
+        { title: "Sat & Sun Only", desc: "Menudo & Barbacoa (Until sold out)." }
+      ],
+      meats: {
+        title: "Choice of Meat",
+        items: ["Pastor (Pork)", "Steak", "Brisket", "Mixed", "Chorizo", "Tripe", "Tongue", "Head", "Chicken", "Pork chunks"]
       },
+      categories: [
+        {
+          id: "antojitos",
+          title: "Main Dishes",
+          image: "/platillos/image_a2ef7c.png",
+          items: [
+            { name: "Tacos", desc: "Handmade tortilla, onion, cilantro", price: "$3.50" },
+            { name: "Chilaquiles", desc: "Green or Red sauce. Egg or meat", price: "$12.00" },
+            { name: "Burritos", desc: "Giant: beans, rice, cheese, meat", price: "$10.00" },
+            { name: "Gorditas", desc: "Stuffed corn pocket with stew", price: "$4.50" },
+            { name: "Sopes", desc: "Thick corn base with toppings", price: "$4.50" },
+            { name: "Quesadillas", desc: "Corn or Flour, melted cheese", price: "$4.00" },
+            { name: "Tortas", desc: "Mexican sandwich, avocado, mayo", price: "$9.00" }
+          ]
+        },
+        {
+          id: "fin_semana",
+          title: "Weekends Only",
+          image: "/platillos/WhatsApp Image 2025-12-12 at 6.06.48 PM.jpeg",
+          items: [
+            { name: "Menudo", desc: "Traditional tripe soup. Tortillas included.", price: "$14.00" },
+            { name: "Barbacoa", desc: "Beef or Goat. By taco or pound.", price: "$16.00" },
+            { name: "Consomé", desc: "Rich barbacoa broth", price: "$5.00" }
+          ]
+        },
+        {
+          id: "extras",
+          title: "By Pound & Catering",
+          image: "/platillos/WhatsApp Image 2025-12-12 at 6.07.47 PM.jpeg",
+          items: [
+            { name: "Meat by the Pound", desc: "Ready to go. Includes salsa.", price: "Quote" },
+            { name: "Catering", desc: "We bring the trompo to you.", price: "Quote" }
+          ]
+        }
+      ],
       cta: "View Full Menu"
     },
-    testimonials: {
-      title: "What people say",
-      reviews: [
-        { name: "Alex R.", text: "The pastor is out of this world! And the orange salsa is spicy and tasty." },
-        { name: "Sarah M.", text: "I love the vibe, it's super modern and the tacos always come out hot." },
-        { name: "Diego F.", text: "The chicharrón gorditas are my addiction. Highly recommended!" }
-      ]
-    },
     location: {
-      title: "Visit Pepes",
+      title: "Visit Us",
       addressTitle: "Address",
-      address: "123 Flavor St, Food City, TX 78702",
+      address: "Austin, TX 78702",
       hoursTitle: "Hours",
-      hours: "Mon - Sun: 10:00 AM - 11:00 PM",
+      hours: "Mon - Sun: 9:00 AM - 10:00 PM",
       contactTitle: "Contact",
       phone: "(512) 555-0199"
     },
-    footer: {
-      rights: "All rights reserved."
-    }
+    footer: { rights: "All rights reserved." }
   }
 };

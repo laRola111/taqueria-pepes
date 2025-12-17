@@ -1,13 +1,12 @@
-// src/app/page.tsx
 import { Navbar } from "@/components/Navbar";
 import { Hero } from "@/components/Hero";
-import { Marquee } from "@/components/Marquee";
-import { MeatSelection } from "@/components/MeatSelection"; // Nueva
-import { FeatureShowcase } from "@/components/FeatureShowcase";
+import { MeatSelection } from "@/components/MeatSelection";
+import { WeekendSection } from "@/components/WeekendSection";
 import { DynamicMenu } from "@/components/DynamicMenu";
 import { HistorySection } from "@/components/HistorySection";
 import { Footer } from "@/components/Footer";
-import { WhatsAppButton } from "@/components/WhatsAppButton"; // Nuevo
+import { WhatsAppButton } from "@/components/WhatsAppButton";
+import { Marquee } from "@/components/Marquee";
 
 export default function Home() {
   return (
@@ -15,9 +14,9 @@ export default function Home() {
       <Navbar />
       <Hero />
       <Marquee />
-      <MeatSelection /> {/* El cliente ve primero qué carnes hay */}
-      <FeatureShowcase />
-      <DynamicMenu />    {/* Menú completo sin precios */}
+      <MeatSelection />   {/* Primero ven las carnes disponibles */}
+      <WeekendSection />  {/* Sección especial de fin de semana */}
+      <DynamicMenu />     {/* Menú completo diario */}
       <HistorySection />
       <Footer />
       <WhatsAppButton />

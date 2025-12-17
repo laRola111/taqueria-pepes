@@ -14,53 +14,73 @@ export const dictionary = {
       headline: "TAQUERÍA PEPE'S ATX",
       subheadline: "Auténtico sabor de trompo y tortillas hechas a mano.",
       cta: "Ver Menú",
+      locationBtn: "Cómo Llegar", // <--- AGREGADO: Para solucionar el error del botón
+    },
+    about: {
+      pretitle: "Nuestra Historia",
+      title: "Más de 20 años de tradición",
+      description: "Traemos el auténtico sabor de la Ciudad de México a Austin. Nuestras recetas han pasado de generación en generación.",
+      stats: [
+         { value: "+20", label: "Años" },
+         { value: "100%", label: "Maíz" },
+         { value: "ATX", label: "Local" }
+      ]
     },
     menu: {
       title: "Nuestro Menú",
       subtitle: "Sabor Que Manda",
       specials: [
-        { title: "¡JUEVES 2x1!", desc: "En Tacos al Pastor. La promo favorita de la casa." },
-        { title: "Sábado y Domingo", desc: "Menudo y Barbacoa (Hasta agotar existencia)." }
+        { title: "¡JUEVES 2x1!", desc: "En Tacos al Pastor. La promo de la casa." },
+        { title: "Fin de Semana", desc: "Menudo, Barbacoa y Chivo." },
+        { title: "Diario", desc: "Pregunta por el platillo especial." }
       ],
       meats: {
-        title: "Elige tu Carne",
+        title: "Elección de Carnes",
         items: [
-          "Pastor (La Especialidad)", "Bistec", "Suadero", "Campechano", 
+          "Pastor", "Bistec", "Suadero", "Campechano", 
           "Chorizo", "Tripa", "Lengua", "Cabeza", "Pollo", "Carnitas"
         ]
       },
       categories: [
         {
           id: "antojitos",
-          title: "Lo Mero Bueno",
-          image: "/platillos/image_a2ef7c.png", 
+          title: "Antojitos y Tacos",
+          // Usamos tus archivos reales de public/platillos
+          image: "/platillos/tacos.png", 
           items: [
-            { name: "Tacos", desc: "Tortilla recién hecha, cebolla y cilantro", price: "$3.50" },
-            { name: "Chilaquiles", desc: "Verdes o Rojos. Con huevo o carne", price: "$12.00" },
-            { name: "Burritos", desc: "El gigante: frijol, arroz, queso y carne", price: "$10.00" },
-            { name: "Gorditas", desc: "Rellenas de chicharrón o tu guiso favorito", price: "$4.50" },
-            { name: "Sopes", desc: "Masa pellizcada con frijol y queso", price: "$4.50" },
-            { name: "Quesadillas", desc: "Maíz o Harina, con mucho queso", price: "$4.00" },
-            { name: "Tortas", desc: "Bolillo crujiente, aguacate y mayonesa", price: "$9.00" }
+            { name: "Tacos", desc: "Tortilla hecha a mano", price: "$3.50" },
+            { name: "Quesadillas", desc: "Maíz o Harina", price: "$4.00" },
+            { name: "Gorditas", desc: "Rellenas de guiso", price: "$5.50" },
+            { name: "Sopes", desc: "Con todo", price: "$4.50" },
+            { name: "Gringas", desc: "Queso y pastor", price: "$13.00" },
+            { name: "Pambazos", desc: "Bañado en guajillo", price: "$14.00" },
+            { name: "Huaraches", desc: "Base grande", price: "$10.00" }
           ]
         },
         {
-          id: "fin_semana",
-          title: "Solo Fines de Semana",
-          image: "/platillos/WhatsApp Image 2025-12-12 at 6.06.48 PM.jpeg",
+          id: "platos_fuertes",
+          title: "Platos Fuertes",
+          image: "/platillos/Enchiladas.png",
           items: [
-            { name: "Menudo", desc: "Pancita tradicional con grano. Incluye tortillas.", price: "$14.00" },
-            { name: "Barbacoa", desc: "De Res o Chivo. Por taco o por libra.", price: "$16.00" },
-            { name: "Consomé", desc: "Caldo reconfortante de barbacoa", price: "$5.00" }
+            { name: "Chilaquiles", desc: "Verdes o Rojos", price: "$14.00" },
+            { name: "Enchiladas", desc: "Orden de 3", price: "$14.00" },
+            { name: "Burrito", desc: "Gigante", price: "$10.00" },
+            { name: "Flautas", desc: "Pollo o Res", price: "$14.00" },
+            { name: "Torta Cubana", desc: "La gigante", price: "$14.00" },
+            { name: "Torta Pepe's", desc: "Carne al gusto", price: "$14.00" },
+            { name: "Quesabirria", desc: "Con consomé", price: "$14.00" }
           ]
         },
         {
-          id: "extras",
-          title: "Por Kilo y Eventos",
-          image: "/platillos/WhatsApp Image 2025-12-12 at 6.07.47 PM.jpeg",
+          id: "caldos_kilos",
+          title: "Caldos y Kilos",
+          image: "/platillos/menudo.png",
           items: [
-            { name: "Venta por Libra", desc: "Carne lista para llevar. Incluye salsas.", price: "Cotizar" },
-            { name: "Taquizas", desc: "Llevamos el trompo a tu evento.", price: "Cotizar" }
+            { name: "Menudo", desc: "Pancita (Fines de Semana)", price: "$14.99" },
+            { name: "Barbacoa", desc: "Res o Chivo", price: "$16.00" },
+            { name: "Consomé", desc: "Borrego o Res", price: "$6.00" },
+            { name: "Carne por Libra", desc: "Para llevar", price: "Cotizar" },
+            { name: "Taquizas", desc: "Para eventos", price: "Cotizar" }
           ]
         }
       ],
@@ -69,7 +89,7 @@ export const dictionary = {
     location: {
       title: "Visítanos",
       addressTitle: "Dirección",
-      address: "Austin, TX 78702", 
+      address: "Austin, TX", 
       hoursTitle: "Horario",
       hours: "Lun - Dom: 9:00 AM - 10:00 PM",
       contactTitle: "Contacto",
@@ -81,63 +101,82 @@ export const dictionary = {
   },
   en: {
     navbar: { home: "Home", menu: "Menu", location: "Location", cta: "Order Now" },
-    hero: { headline: "PEPE'S TAQUERIA ATX", subheadline: "Authentic street style with handmade tortillas.", cta: "View Menu" },
+    hero: { 
+      headline: "PEPE'S TAQUERIA ATX", 
+      subheadline: "Authentic street style with handmade tortillas.", 
+      cta: "View Menu",
+      locationBtn: "Get Directions" // <--- AGREGADO EN INGLÉS TAMBIÉN
+    },
+    about: {
+      pretitle: "Our History",
+      title: "20+ Years of Tradition",
+      description: "Bringing authentic Mexico City flavor to Austin. Family recipes perfected over generations.",
+      stats: [{ value: "+20", label: "Years" }, { value: "100%", label: "Corn" }, { value: "ATX", label: "Local" }]
+    },
     menu: {
       title: "Our Menu",
       subtitle: "Real Mexican Flavor",
       specials: [
-        { title: "THURSDAY 2x1!", desc: "Al Pastor Tacos. House favorite promo." },
-        { title: "Sat & Sun Only", desc: "Menudo & Barbacoa (Until sold out)." }
+        { title: "THURSDAY 2x1!", desc: "Al Pastor Tacos." },
+        { title: "Weekends Only", desc: "Menudo & Barbacoa." },
+        { title: "Daily Special", desc: "Ask for the dish of the day." }
       ],
       meats: {
-        title: "Choice of Meat",
-        items: ["Pastor (Pork)", "Steak", "Brisket", "Mixed", "Chorizo", "Tripe", "Tongue", "Head", "Chicken", "Pork chunks"]
+        title: "Meat Choices",
+        items: ["Pastor", "Steak", "Brisket", "Mixed", "Chorizo", "Tripe", "Tongue", "Head", "Chicken", "Pork"]
       },
       categories: [
         {
           id: "antojitos",
+          title: "Tacos & Cravings",
+          image: "/platillos/tacos.png",
+          items: [
+            { name: "Tacos", desc: "Handmade tortilla", price: "$3.50" },
+            { name: "Quesadillas", desc: "Corn or Flour", price: "$4.00" },
+            { name: "Gorditas", desc: "Stuffed with stew", price: "$5.50" },
+            { name: "Sopes", desc: "With everything", price: "$4.50" },
+            { name: "Gringas", desc: "Cheese and pastor", price: "$13.00" },
+            { name: "Pambazos", desc: "Dipped in guajillo", price: "$14.00" },
+            { name: "Huaraches", desc: "Large base", price: "$10.00" }
+          ]
+        },
+        {
+          id: "platos_fuertes",
           title: "Main Dishes",
-          image: "/platillos/image_a2ef7c.png",
+          image: "/platillos/Enchiladas.png",
           items: [
-            { name: "Tacos", desc: "Handmade tortilla, onion, cilantro", price: "$3.50" },
-            { name: "Chilaquiles", desc: "Green or Red sauce. Egg or meat", price: "$12.00" },
-            { name: "Burritos", desc: "Giant: beans, rice, cheese, meat", price: "$10.00" },
-            { name: "Gorditas", desc: "Stuffed corn pocket with stew", price: "$4.50" },
-            { name: "Sopes", desc: "Thick corn base with toppings", price: "$4.50" },
-            { name: "Quesadillas", desc: "Corn or Flour, melted cheese", price: "$4.00" },
-            { name: "Tortas", desc: "Mexican sandwich, avocado, mayo", price: "$9.00" }
+            { name: "Chilaquiles", desc: "Green or Red", price: "$14.00" },
+            { name: "Enchiladas", desc: "Order of 3", price: "$14.00" },
+            { name: "Burrito", desc: "Giant", price: "$10.00" },
+            { name: "Flautas", desc: "Chicken or Beef", price: "$14.00" },
+            { name: "Torta Cubana", desc: "The giant", price: "$14.00" },
+            { name: "Torta Pepe's", desc: "Meat of choice", price: "$14.00" },
+            { name: "Quesabirria", desc: "With consommé", price: "$14.00" }
           ]
         },
         {
-          id: "fin_semana",
-          title: "Weekends Only",
-          image: "/platillos/WhatsApp Image 2025-12-12 at 6.06.48 PM.jpeg",
+          id: "caldos_kilos",
+          title: "Soups & By Pound",
+          image: "/platillos/menudo.png",
           items: [
-            { name: "Menudo", desc: "Traditional tripe soup. Tortillas included.", price: "$14.00" },
-            { name: "Barbacoa", desc: "Beef or Goat. By taco or pound.", price: "$16.00" },
-            { name: "Consomé", desc: "Rich barbacoa broth", price: "$5.00" }
-          ]
-        },
-        {
-          id: "extras",
-          title: "By Pound & Catering",
-          image: "/platillos/WhatsApp Image 2025-12-12 at 6.07.47 PM.jpeg",
-          items: [
-            { name: "Meat by the Pound", desc: "Ready to go. Includes salsa.", price: "Quote" },
-            { name: "Catering", desc: "We bring the trompo to you.", price: "Quote" }
+            { name: "Menudo", desc: "Tripe soup (Weekends)", price: "$14.99" },
+            { name: "Barbacoa", desc: "Beef or Goat", price: "$16.00" },
+            { name: "Consommé", desc: "Lamb or beef", price: "$6.00" },
+            { name: "Meat by the Pound", desc: "To go", price: "Quote" },
+            { name: "Catering", desc: "For events", price: "Quote" }
           ]
         }
       ],
       cta: "View Full Menu"
     },
-    location: {
-      title: "Visit Us",
-      addressTitle: "Address",
-      address: "Austin, TX 78702",
-      hoursTitle: "Hours",
-      hours: "Mon - Sun: 9:00 AM - 10:00 PM",
-      contactTitle: "Contact",
-      phone: "(512) 555-0199"
+    location: { 
+      title: "Visit Us", 
+      addressTitle: "Address", 
+      address: "Austin, TX", 
+      hoursTitle: "Hours", 
+      hours: "9am - 10pm", 
+      contactTitle: "Contact", 
+      phone: "(512) 555-0199" 
     },
     footer: { rights: "All rights reserved." }
   }

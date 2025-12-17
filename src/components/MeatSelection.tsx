@@ -15,12 +15,12 @@ export function MeatSelection() {
             {t.menu.meatSection.subtitle}
           </p>
         </div>
-        <div className="flex flex-wrap justify-center gap-4">
+        <div className="flex flex-wrap justify-center gap-4 max-w-5xl mx-auto">
           {t.menu.meatSection.items.map((meat: string, i: number) => (
             <motion.div 
               key={i}
               whileHover={{ scale: 1.05, backgroundColor: "#ec6629", color: "#ffffff" }}
-              className="px-8 py-4 bg-primary-soft rounded-2xl border border-primary/10 text-primary font-black uppercase text-lg cursor-default transition-colors shadow-sm"
+              className="px-6 py-3 bg-light rounded-2xl border-2 border-dark/5 text-primary font-black uppercase text-base md:text-lg cursor-default transition-all shadow-sm hover:shadow-md hover:border-primary"
             >
               {meat}
             </motion.div>

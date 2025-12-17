@@ -1,39 +1,45 @@
-"use client";
+'use client';
+import { useLanguage } from '@/context/LanguageContext';
+import { dictionary } from '@/lib/dictionary';
+import { motion } from 'framer-motion';
 
-import { motion } from "framer-motion";
+export default function Marquee() {
+  const { language } = useLanguage();
+  const t = dictionary[language].promos;
 
-const items = [
-  "TACOS AL PASTOR", 
-  "BARBACOA DE CHIVO", 
-  "TORTAS GIGANTES", 
-  "QUESABIRRIAS", 
-  "CHILAQUILES", 
-  "SOPES", 
-  "QUESADILLAS DE MAÍZ",
-  "PAMBAZOS"
-];
+  // Creamos una lista repetida para que el bucle sea infinito y suave
+  const content = [
+    t.deal, "•", t.highlight1, "•", t.highlight2, "•",
+    t.deal, "•", t.highlight1, "•", t.highlight2, "•"
+  ];
 
-export function Marquee() {
   return (
-    <div className="bg-primary py-4 md:py-6 overflow-hidden relative z-20 shadow-lg border-y border-white/20">
-      <motion.div 
-        animate={{ x: [0, -1000] }}
-        transition={{ 
-          duration: 25, 
-          repeat: Infinity, 
-          ease: "linear" 
+    <div className="bg-orange-500 overflow-hidden py-3 border-y-4 border-orange-600 relative z-20 shadow-md">
+      {/* Contenedor que se mueve usando Framer Motion (No requiere CSS global) */}
+      <motion.div
+        className="flex whitespace-nowrap"
+        animate={{ x: "-50%" }}
+        transition={{
+          repeat: Infinity,
+          ease: "linear",
+          duration: 20, // Ajusta este número para cambiar la velocidad (más alto = más lento)
         }}
-        className="flex whitespace-nowrap gap-12 items-center"
       >
-        {/* Duplicamos los items para que el loop sea infinito y fluido */}
-        {[...items, ...items].map((item, i) => (
-          <div key={i} className="flex items-center gap-12">
-            <span className="text-white font-heading font-black text-3xl md:text-5xl tracking-tighter italic">
-              {item}
+        {/* Renderizamos el contenido dos veces para hacer el loop perfecto */}
+        <div className="flex gap-12 items-center px-6">
+          {content.map((text, i) => (
+            <span key={`a-${i}`} className="text-black font-black text-lg md:text-xl tracking-wider uppercase">
+              {text === "•" ? <span className="text-red-700">•</span> : text}
             </span>
-            <span className="text-secondary text-4xl md:text-6xl">★</span>
-          </div>
-        ))}
+          ))}
+        </div>
+        <div className="flex gap-12 items-center px-6">
+          {content.map((text, i) => (
+            <span key={`b-${i}`} className="text-black font-black text-lg md:text-xl tracking-wider uppercase">
+              {text === "•" ? <span className="text-red-700">•</span> : text}
+            </span>
+          ))}
+        </div>
       </motion.div>
     </div>
   );

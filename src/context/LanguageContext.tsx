@@ -1,55 +1,34 @@
-"use client";
+'use client';
 
-import React, { createContext, useContext, useState, useEffect, ReactNode } from 'react';
-import { dictionary, Language } from '@/lib/dictionary';
+import React, { createContext, useContext, useState, ReactNode } from 'react';
 
-// Definimos la forma exacta del contexto
+type Language = 'es' | 'en';
+
 interface LanguageContextType {
   language: Language;
-  setLanguage: (lang: Language) => void; // <--- AQUÍ está la clave
-  t: typeof dictionary['es']; // Helper para tener tipado en el diccionario
+  toggleLanguage: () => void;
 }
 
-// Valor por defecto seguro para evitar crash si se usa fuera del Provider
-const defaultContext: LanguageContextType = {
-  language: 'es',
-  setLanguage: () => {}, 
-  t: dictionary['es']
-};
-
-const LanguageContext = createContext<LanguageContextType>(defaultContext);
+const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
 
 export function LanguageProvider({ children }: { children: ReactNode }) {
   const [language, setLanguage] = useState<Language>('es');
 
-  // Opcional: Persistir el idioma en localStorage
-  useEffect(() => {
-    const savedLang = localStorage.getItem('pepes-lang') as Language;
-    if (savedLang && (savedLang === 'es' || savedLang === 'en')) {
-      setLanguage(savedLang);
-    }
-  }, []);
-
-  const handleSetLanguage = (lang: Language) => {
-    setLanguage(lang);
-    localStorage.setItem('pepes-lang', lang);
-  };
-
-  // El objeto 'value' que pasamos a toda la app
-  const value = {
-    language,
-    setLanguage: handleSetLanguage,
-    t: dictionary[language]
+  const toggleLanguage = () => {
+    setLanguage((prev) => (prev === 'es' ? 'en' : 'es'));
   };
 
   return (
-    <LanguageContext.Provider value={value}>
+    <LanguageContext.Provider value={{ language, toggleLanguage }}>
       {children}
     </LanguageContext.Provider>
   );
 }
 
-// El hook personalizado para usar en los componentes
 export function useLanguage() {
-  return useContext(LanguageContext);
+  const context = useContext(LanguageContext);
+  if (context === undefined) {
+    throw new Error('useLanguage must be used within a LanguageProvider');
+  }
+  return context;
 }

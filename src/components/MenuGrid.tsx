@@ -1,90 +1,71 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Flame } from "lucide-react";
 import { useLanguage } from "@/context/LanguageContext";
 import Image from "next/image";
 
-// Definimos la interfaz aquí para asegurar el tipado
-interface Category {
-  id: string;
-  title: string;
-  image: string;
-  items: any[];
-}
-
 export function MenuGrid() {
   const { t } = useLanguage();
-  // Casting explícito porque t.menu.categories viene del JSON
-  const categories = t.menu.categories as Category[]; 
+  const categories = t.menu.categories;
 
   return (
-    <section id="menu" className="py-24 bg-light relative overflow-hidden">
-      <div className="container mx-auto px-4 md:px-8">
+    <section id="menu" className="py-32 bg-light relative">
+      <div className="container mx-auto px-4">
         
-        {/* Encabezado */}
-        <div className="text-center mb-16 space-y-4 relative z-10">
-          <h2 className="text-primary font-bold text-xl uppercase tracking-widest">
-            {t.menu.title}
-          </h2>
-          <h3 className="font-heading font-black text-5xl md:text-6xl text-dark">
-            {t.menu.subtitle}
-          </h3>
-          
-          {/* Banner de Especiales (Usando Secondary/Amarillo) */}
-          <div className="flex flex-wrap justify-center gap-4 mt-8">
-             {t.menu.specials.slice(0, 2).map((s: any, i: number) => (
-                 <span key={i} className="bg-secondary text-dark px-4 py-1 rounded-full text-sm font-bold shadow-pepes border-2 border-dark">
-                     🔥 {s.desc}
-                 </span>
-             ))}
+        <div className="flex flex-col md:flex-row justify-between items-end mb-20 gap-8">
+          <div className="max-w-2xl">
+            <h2 className="text-primary font-black text-2xl mb-4 tracking-tighter flex items-center gap-2">
+              <Flame fill="currentColor" /> {t.menu.title}
+            </h2>
+            <h3 className="font-heading font-black text-6xl md:text-8xl text-dark leading-none">
+              {t.menu.subtitle}
+            </h3>
           </div>
+          <p className="text-xl font-bold text-dark/60 max-w-xs border-l-4 border-secondary pl-4">
+            Recetas auténticas traídas directamente de CDMX.
+          </p>
         </div>
 
-        {/* Grid Principal */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {categories.map((cat, i) => (
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+          {categories.map((cat: any, i: number) => (
             <motion.div
               key={cat.id}
-              initial={{ opacity: 0, y: 50 }}
+              initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.1 }}
-              className="group relative h-[500px] rounded-[2rem] overflow-hidden cursor-pointer shadow-pepes border-2 border-dark bg-white"
+              className="group relative bg-white border-4 border-dark p-8 rounded-[3rem] shadow-pepes hover:bg-secondary transition-all duration-300"
             >
-              {/* Imagen de Fondo */}
-              <div className="absolute inset-0">
+              {/* Imagen que sobresale de la tarjeta */}
+              <div className="relative h-56 -mt-24 mb-6 transition-transform duration-500 group-hover:scale-110 group-hover:-rotate-6">
                 <Image 
                     src={cat.image} 
                     alt={cat.title}
                     fill
-                    className="object-cover transition-transform duration-700 group-hover:scale-110"
+                    className="object-contain drop-shadow-2xl"
                 />
-                {/* Degradado usando variables CSS */}
-                <div className="absolute inset-0 bg-gradient-to-t from-dark/90 via-dark/40 to-transparent" />
               </div>
 
-              {/* Contenido de la Tarjeta */}
-              <div className="absolute inset-0 p-8 flex flex-col justify-end text-light">
-                <h4 className="font-heading font-bold text-3xl mb-2 group-hover:text-secondary transition-colors">
-                    {cat.title}
-                </h4>
-                
-                {/* Preview de items */}
-                <ul className="mb-6 space-y-1 text-gray-200 text-sm font-medium">
-                    {cat.items.slice(0, 4).map((item: any, idx: number) => (
-                        <li key={idx}>• {item.name}</li>
-                    ))}
-                </ul>
+              <h4 className="font-heading font-black text-4xl mb-4 text-dark italic">
+                  {cat.title}
+              </h4>
+              
+              <ul className="mb-8 space-y-3">
+                  {cat.items.slice(0, 4).map((item: any, idx: number) => (
+                      <li key={idx} className="flex justify-between items-center border-b-2 border-dark/10 pb-1">
+                        <span className="font-bold">{item.name}</span>
+                        <span className="bg-dark text-white px-2 py-0.5 rounded text-sm">{item.price}</span>
+                      </li>
+                  ))}
+              </ul>
 
-                <button className="w-full py-3 rounded-xl font-bold bg-light text-dark group-hover:bg-primary group-hover:text-white transition-all flex items-center justify-center gap-2 border-2 border-transparent group-hover:border-light">
-                  Ver Detalles <ArrowRight size={18} />
-                </button>
-              </div>
+              <button className="w-full py-4 bg-dark text-white rounded-2xl font-black text-lg flex items-center justify-center gap-2 group-hover:bg-primary transition-colors">
+                VER TODO <ArrowRight />
+              </button>
             </motion.div>
           ))}
         </div>
-
       </div>
     </section>
   );

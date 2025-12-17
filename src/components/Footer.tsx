@@ -1,63 +1,43 @@
 "use client";
 
 import { useLanguage } from "@/context/LanguageContext";
-import { Facebook, Instagram, MapPin } from "lucide-react";
+import Image from "next/image";
 
 export function Footer() {
   const { t } = useLanguage();
 
   return (
-    <footer className="bg-dark text-white pt-20 pb-10 border-t-4 border-primary">
-      <div className="container mx-auto px-4 md:px-8">
-        <div className="grid md:grid-cols-3 gap-12 mb-16 text-center md:text-left">
-          
-          {/* Marca */}
-          <div>
-            <h3 className="font-heading font-black text-4xl text-secondary mb-6">
-              PEPE'S ATX
-            </h3>
-            <p className="text-gray-400 leading-relaxed">
-              {t.about.description}
-            </p>
-          </div>
+    <footer className="bg-primary pt-24 pb-12 border-t-8 border-dark">
+      <div className="container mx-auto px-4 text-center">
+        <div className="mb-12 inline-block bg-white p-4 border-4 border-dark shadow-pepes -rotate-3">
+          <Image src="/logoPepes.png" alt="Logo Pepe's" width={180} height={180} />
+        </div>
+        
+        <h4 className="font-heading font-black text-5xl md:text-7xl text-white mb-8 uppercase italic">
+          ¡Te esperamos!
+        </h4>
 
-          {/* Horarios */}
+        <div className="grid md:grid-cols-3 gap-12 text-white font-black uppercase tracking-tighter mb-16">
           <div>
-            <h4 className="font-bold text-xl text-primary mb-6 uppercase tracking-wider">
-              {t.location.hoursTitle}
-            </h4>
-            <ul className="space-y-2 text-gray-300">
-              <li className="font-medium">{t.location.hours}</li>
-              <li>Happy Hour: Jueves todo el día</li>
-            </ul>
+            <p className="text-secondary text-xl mb-2">{t.location.addressTitle}</p>
+            <p className="text-3xl">Austin, TX</p>
           </div>
-
-          {/* Contacto */}
           <div>
-             <h4 className="font-bold text-xl text-primary mb-6 uppercase tracking-wider">
-              {t.location.contactTitle}
-            </h4>
-            <ul className="space-y-4 text-gray-300">
-              <li className="flex items-center gap-3 justify-center md:justify-start">
-                <MapPin className="text-secondary" />
-                {t.location.address}
-              </li>
-              <li className="font-black text-2xl text-white">
-                {t.location.phone}
-              </li>
-              <li className="flex gap-4 justify-center md:justify-start mt-4">
-                 {/* Iconos Sociales */}
-                 <a href="#" className="p-3 bg-white/10 rounded-full hover:bg-primary transition-colors"><Facebook size={20}/></a>
-                 <a href="#" className="p-3 bg-white/10 rounded-full hover:bg-primary transition-colors"><Instagram size={20}/></a>
-              </li>
-            </ul>
+            <p className="text-secondary text-xl mb-2">{t.location.hoursTitle}</p>
+            <p className="text-3xl">9:00 AM - 10:00 PM</p>
           </div>
-
+          <div>
+            <p className="text-secondary text-xl mb-2">Social</p>
+            <p className="text-3xl">@TaqueriaPepes</p>
+          </div>
         </div>
 
-        {/* Copyright */}
-        <div className="border-t border-gray-800 pt-8 text-center text-gray-500 text-sm">
-          <p>© {new Date().getFullYear()} Taquería Pepe's ATX. {t.footer.rights}</p>
+        <div className="border-t-4 border-dark/20 pt-8 flex flex-col md:flex-row justify-between items-center text-white/80 font-bold">
+          <p>© 2025 TAQUERÍA PEPE'S - ARK NICA IA OPTIMIZED</p>
+          <div className="flex gap-8 mt-4 md:mt-0">
+             <span>PRIVACY</span>
+             <span>TERMS</span>
+          </div>
         </div>
       </div>
     </footer>

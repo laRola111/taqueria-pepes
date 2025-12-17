@@ -1,17 +1,16 @@
 @import "tailwindcss";
 
 @theme inline {
-  /* Paleta TAQUERÍA PEPES - Más vibrante */
-  --color-primary: #ec6629;
+  --color-primary: #ec6629;       /* Naranja vibrante */
   --color-primary-dark: #d83415;
-  --color-secondary: #e8db2f;
+  --color-secondary: #e8db2f;     /* Amarillo mostaza */
   --color-dark: #1a1a1a;
-  --color-light: #fdfbf7; /* Crema muy suave, no blanco clínico */
+  --color-light: #fdfbf7;         /* Crema suave */
 
   --font-heading: var(--font-fredoka);
   --font-body: var(--font-inter);
   
-  --shadow-pepes: 8px 8px 0px 0px #1a1a1a; /* Sombra dura estilo Pop Art */
+  --shadow-pepes: 12px 12px 0px 0px #1a1a1a; /* Sombra sólida estilo comic */
 }
 
 :root {
@@ -23,32 +22,20 @@ body {
   background-color: var(--background);
   color: var(--foreground);
   font-family: var(--font-body);
-  position: relative;
+  overflow-x: hidden;
 }
 
-/* TEXTURA DE RUIDO (Sutil) */
+/* TEXTURA DE FONDO - Da profundidad */
 body::before {
   content: "";
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.05'/%3E%3C/svg%3E");
+  top: 0; left: 0; width: 100%; height: 100%;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
   pointer-events: none;
   z-index: 50;
-  opacity: 0.4;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1, h2, h3 {
   font-family: var(--font-heading);
-}
-
-/* Utilidad para ocultar barra de scroll en móviles */
-.no-scrollbar::-webkit-scrollbar {
-  display: none;
-}
-.no-scrollbar {
-  -ms-overflow-style: none;
-  scrollbar-width: none;
+  text-transform: uppercase;
 }

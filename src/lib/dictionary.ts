@@ -18,12 +18,10 @@ export const dictionary = {
     menu: {
       title: "Nuestro Menú",
       subtitle: "Sabor Que Manda",
-      // Aquí están las promociones clave del análisis (La "Estrella Amarilla")
       specials: [
         { title: "¡JUEVES 2x1!", desc: "En Tacos al Pastor. La promo favorita de la casa." },
         { title: "Sábado y Domingo", desc: "Menudo y Barbacoa (Hasta agotar existencia)." }
       ],
-      // Lista de carnes disponibles para los antojitos
       meats: {
         title: "Elige tu Carne",
         items: [
@@ -31,12 +29,10 @@ export const dictionary = {
           "Chorizo", "Tripa", "Lengua", "Cabeza", "Pollo", "Carnitas"
         ]
       },
-      // Categorías organizadas según el layout descrito
       categories: [
         {
           id: "antojitos",
           title: "Lo Mero Bueno",
-          // Usamos la imagen principal que subiste
           image: "/platillos/image_a2ef7c.png", 
           items: [
             { name: "Tacos", desc: "Tortilla recién hecha, cebolla y cilantro", price: "$3.50" },
@@ -51,7 +47,6 @@ export const dictionary = {
         {
           id: "fin_semana",
           title: "Solo Fines de Semana",
-          // Usamos una de las fotos de WhatsApp como referencia visual
           image: "/platillos/WhatsApp Image 2025-12-12 at 6.06.48 PM.jpeg",
           items: [
             { name: "Menudo", desc: "Pancita tradicional con grano. Incluye tortillas.", price: "$14.00" },
@@ -84,7 +79,6 @@ export const dictionary = {
         rights: "Todos los derechos reservados."
     }
   },
-  // Versión en Inglés (Espejo exacto para no romper el código)
   en: {
     navbar: { home: "Home", menu: "Menu", location: "Location", cta: "Order Now" },
     hero: { headline: "PEPE'S TAQUERIA ATX", subheadline: "Authentic street style with handmade tortillas.", cta: "View Menu" },

@@ -1,37 +1,48 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Star } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { useLanguage } from "@/context/LanguageContext";
+import Image from "next/image";
+
+// Definimos la interfaz aquí para asegurar el tipado
+interface Category {
+  id: string;
+  title: string;
+  image: string;
+  items: any[];
+}
 
 export function MenuGrid() {
   const { t } = useLanguage();
-
-  // Mapeamos las categorías del diccionario a un array para poder iterar
-  const categories = [
-    { id: 'tacos', ...t.menu.categories.tacos, icon: "🌮" },
-    { id: 'tortas', ...t.menu.categories.tortas, icon: "🥪" },
-    { id: 'gorditas', ...t.menu.categories.gorditas, icon: "🫓" },
-    { id: 'specialties', ...t.menu.categories.specialties, icon: "🔥" },
-  ];
+  // Casting explícito porque t.menu.categories viene del JSON
+  const categories = t.menu.categories as Category[]; 
 
   return (
-    <section id="menu" className="py-24 bg-white relative">
+    <section id="menu" className="py-24 bg-light relative overflow-hidden">
       <div className="container mx-auto px-4 md:px-8">
         
         {/* Encabezado */}
-        <div className="text-center mb-16 space-y-4">
-          <h2 className="text-pepes-orange font-bold text-xl uppercase tracking-widest">
+        <div className="text-center mb-16 space-y-4 relative z-10">
+          <h2 className="text-primary font-bold text-xl uppercase tracking-widest">
             {t.menu.title}
           </h2>
-          <h3 className="font-heading font-black text-5xl md:text-6xl text-pepes-dark">
+          <h3 className="font-heading font-black text-5xl md:text-6xl text-dark">
             {t.menu.subtitle}
           </h3>
-          <div className="w-24 h-2 bg-pepes-yellow mx-auto rounded-full mt-4" />
+          
+          {/* Banner de Especiales (Usando Secondary/Amarillo) */}
+          <div className="flex flex-wrap justify-center gap-4 mt-8">
+             {t.menu.specials.slice(0, 2).map((s: any, i: number) => (
+                 <span key={i} className="bg-secondary text-dark px-4 py-1 rounded-full text-sm font-bold shadow-pepes border-2 border-dark">
+                     🔥 {s.desc}
+                 </span>
+             ))}
+          </div>
         </div>
 
-        {/* Grid de Tarjetas "Pop" */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        {/* Grid Principal */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {categories.map((cat, i) => (
             <motion.div
               key={cat.id}
@@ -39,39 +50,39 @@ export function MenuGrid() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.1 }}
-              whileHover={{ y: -10 }}
-              className="bg-white border-2 border-gray-100 rounded-[2rem] p-8 flex flex-col items-center text-center shadow-lg hover:border-pepes-orange hover:shadow-[0_10px_0_0_#ec6629] transition-all duration-300 group"
+              className="group relative h-[500px] rounded-[2rem] overflow-hidden cursor-pointer shadow-pepes border-2 border-dark bg-white"
             >
-              {/* Icono Gigante */}
-              <div className="text-6xl mb-6 bg-pepes-light w-24 h-24 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
-                {cat.icon}
+              {/* Imagen de Fondo */}
+              <div className="absolute inset-0">
+                <Image 
+                    src={cat.image} 
+                    alt={cat.title}
+                    fill
+                    className="object-cover transition-transform duration-700 group-hover:scale-110"
+                />
+                {/* Degradado usando variables CSS */}
+                <div className="absolute inset-0 bg-gradient-to-t from-dark/90 via-dark/40 to-transparent" />
               </div>
 
-              <h4 className="font-heading font-bold text-3xl text-pepes-dark mb-3">
-                {cat.title}
-              </h4>
-              
-              <p className="text-gray-500 mb-6 flex-grow leading-relaxed">
-                {cat.desc}
-              </p>
+              {/* Contenido de la Tarjeta */}
+              <div className="absolute inset-0 p-8 flex flex-col justify-end text-light">
+                <h4 className="font-heading font-bold text-3xl mb-2 group-hover:text-secondary transition-colors">
+                    {cat.title}
+                </h4>
+                
+                {/* Preview de items */}
+                <ul className="mb-6 space-y-1 text-gray-200 text-sm font-medium">
+                    {cat.items.slice(0, 4).map((item: any, idx: number) => (
+                        <li key={idx}>• {item.name}</li>
+                    ))}
+                </ul>
 
-              <div className="w-full mt-auto">
-                <span className="block text-pepes-orange font-bold text-xl mb-4">
-                  {cat.price}
-                </span>
-                <button className="w-full py-3 rounded-xl font-bold bg-gray-100 text-pepes-dark group-hover:bg-pepes-dark group-hover:text-white transition-colors flex items-center justify-center gap-2">
-                  Pedir <Star size={16} className="fill-current" />
+                <button className="w-full py-3 rounded-xl font-bold bg-light text-dark group-hover:bg-primary group-hover:text-white transition-all flex items-center justify-center gap-2 border-2 border-transparent group-hover:border-light">
+                  Ver Detalles <ArrowRight size={18} />
                 </button>
               </div>
             </motion.div>
           ))}
-        </div>
-
-        {/* Botón Ver Todo */}
-        <div className="text-center mt-16">
-          <button className="text-pepes-dark font-bold text-lg border-b-2 border-pepes-orange pb-1 hover:text-pepes-orange transition-colors">
-            {t.menu.cta} →
-          </button>
         </div>
 
       </div>

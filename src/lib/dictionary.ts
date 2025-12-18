@@ -22,7 +22,7 @@ export const dictionary = {
         {
           name: "Quesabirria",
           description: "La favorita de todos. Tortilla doradita, mucho queso, birria y su consomé.",
-          image: "/platillos/quesadillaDeMaiz.png"
+          image: "/platillos/quesabirria.png"
         },
         {
           name: "Barbacoa",
@@ -34,9 +34,10 @@ export const dictionary = {
     menu: {
       title: "Nuestro Menú",
       categories: {
+        breakfast: "Desayunos",
         tacos: "Tacos y Carnes",
         antojitos: "Antojitos Mexicanos",
-        plates: "",
+        plates: "Especialidades",
         sides: "Acompañantes",
         drinks: "Bebidas",
         weekend: "Fin de Semana (Sáb y Dom)",
@@ -59,11 +60,24 @@ export const dictionary = {
           "Barbacoa de Res",
           "Tripa",
           "Campechano",
-          "Mole Verde"
+          "Mole Verde",
+          "Sirlon"
         ]
       },
       items: {
+        breakfast: [
+            {
+                name: "Tacos de Desayuno",
+                description: "Huevo con: Jamón, Tocino, Salchicha, Migas, Nopal, Frijol, Queso.",
+                image: "/platillos/breakfastTacos.png" 
+            }
+        ],
         antojitos: [
+          { 
+            name: "Tacos", 
+            description: "¡Con tortilla hecha a mano! Elige tu carne favorita.", 
+            image: "/platillos/taco.png" 
+          },
           { 
             name: "Flautas", 
             description: "Incluye: Arroz, Frijol, Cebolla cambray y Chile toreado.", 
@@ -88,11 +102,6 @@ export const dictionary = {
             name: "Torta", 
             description: "Estilo Cubana y Carne de su preferencia.", 
             image: "/platillos/torta.png" 
-          },
-          { 
-            name: "Tacos", 
-            description: "Con tortilla hecha a mano y la carne que más te guste.", 
-            image: "/platillos/tacos.png" 
           },
           { 
             name: "Chilaquiles", 
@@ -122,19 +131,24 @@ export const dictionary = {
           { 
             name: "Gringas", 
             description: "Dos tortillas de harina con queso y carne al pastor.", 
-            image: "/platillos/Quesadilla.png" 
+            image: "/platillos/gringas.png" 
           },
           { 
             name: "Quesabirria", 
             description: "Tacos de birria con queso fundido y consomé.", 
-            image: "/platillos/tacos.png"
+            image: "/platillos/quesabirria.png"
           },
         ],
         specialties: [
+          // { 
+          //   name: "Platillo del Día", 
+          //   description: "Pregunta por nuestro especial de hoy.", 
+          //   image: "/platillos/tacos.png" 
+          // },
           { 
             name: "Barbacoa de Res", 
             description: "Disponible todos los días.", 
-            image: "/platillos/tacos.png" 
+            image: "/platillos/BarbacoaRes.png" 
           }
         ],
         weekend: [
@@ -157,12 +171,13 @@ export const dictionary = {
         bulk: [
           { name: "Carne cocida por libra", description: "Incluye tortillas, salsas y verduras." },
           { name: "Carne cruda por libra", description: "Opciones: Cecina, Adobada o Longaniza." },
-          { name: "Taquizas para eventos", description: "Servicio completo para todo tipo de fiesta." },
+          { name: "Taquizas para eventos", description: "Servicio completo para todo tipo de fiesta.", image: "/platillos/taquizas.jpeg" },
         ],
         sides: [
           { name: "Arroz Mexicano" },
           { name: "Frijoles" },
           { name: "Cebollitas Asadas" },
+          { name: "Chiles Toreados" },
         ],
         drinks: [
           { name: "Aguas Frescas" },
@@ -246,6 +261,7 @@ export const dictionary = {
     menu: {
       title: "Our Menu",
       categories: {
+        breakfast: "Breakfast",
         tacos: "Tacos & Meats",
         antojitos: "Mexican Antojitos",
         plates: "Specialties & Soups",
@@ -271,11 +287,24 @@ export const dictionary = {
           "Beef Barbacoa",
           "Tripa (Tripe)",
           "Campechano (Mixed)",
-          "Mole Verde"
+          "Mole Verde",
+          "Sirloin"
         ]
       },
       items: {
+        breakfast: [
+            {
+                name: "Breakfast Tacos",
+                description: "Eggs with: Ham, Bacon, Sausage, Migas, Nopal, Beans, Cheese.",
+                image: "/platillos/breakfastTacos.png" 
+            }
+        ],
         antojitos: [
+          { 
+            name: "Tacos", 
+            description: "With handmade tortilla! Choose your favorite meat.", 
+            image: "/taco.png" 
+          },
           { 
             name: "Flautas", 
             description: "Includes: Rice, Beans, Grilled Onions and Roasted Chili.", 
@@ -300,11 +329,6 @@ export const dictionary = {
             name: "Torta", 
             description: "Cubana style or meat of your choice.", 
             image: "/platillos/torta.png" 
-          },
-          { 
-            name: "Tacos", 
-            description: "With handmade tortilla and your favorite meat.", 
-            image: "/platillos/tacos.png" 
           },
           { 
             name: "Chilaquiles", 
@@ -334,7 +358,7 @@ export const dictionary = {
           { 
             name: "Gringas", 
             description: "Two flour tortillas with cheese and pastor meat.", 
-            image: "/platillos/Quesadilla.png" 
+            image: "/platillos/gringas.png" 
           },
           { 
             name: "Quesabirria", 
@@ -343,10 +367,15 @@ export const dictionary = {
           },
         ],
         specialties: [
+          // { 
+          //   name: "Daily Special", 
+          //   description: "Ask for today's special plate.", 
+          //   image: "/platillos/tacos.png" 
+          // },
           { 
             name: "Beef Barbacoa", 
             description: "Available every day.", 
-            image: "/platillos/tacos.png" 
+            image: "/platillos/BarbacoaRes.jpeg" 
           }
         ],
         weekend: [
@@ -369,12 +398,13 @@ export const dictionary = {
         bulk: [
           { name: "Cooked Meat by Pound", description: "Includes tortillas, salsas and veggies." },
           { name: "Raw Meat by Pound", description: "Options: Cecina, Adobada or Longaniza." },
-          { name: "Taquizas for Events", description: "Full service for any type of party." },
+          { name: "Taquizas for Events", description: "Full service for any type of party.", image: "/platillos/taquizas.jpeg" },
         ],
         sides: [
           { name: "Mexican Rice" },
           { name: "Refried Beans" },
           { name: "Grilled Onions" },
+          { name: "Chiles Toreados (Blistered Peppers)" },
         ],
         drinks: [
           { name: "Aguas Frescas" },

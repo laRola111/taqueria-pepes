@@ -55,7 +55,7 @@ export default function Hero() {
           
           <div className="relative w-full h-full animate-in zoom-in duration-1000">
              <Image
-              src="/platillos/tacos.png" 
+              src="/platillos/taco.png" 
               alt="Tacos Mexicanos"
               fill
               className="object-contain drop-shadow-2xl"

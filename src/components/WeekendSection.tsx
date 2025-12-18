@@ -15,7 +15,7 @@ export default function WeekendSection() {
         
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
           
-          {/* Columna 1: Fin de Semana */}
+          {/* Columna 1: Fin de Semana (Menudo, Chivo) */}
           <div>
             <div className="flex items-center gap-3 mb-8">
               <CalendarDays className="text-orange-600 w-10 h-10" />
@@ -38,7 +38,7 @@ export default function WeekendSection() {
             </div>
           </div>
 
-          {/* Columna 2: Venta por Libra y Eventos */}
+          {/* Columna 2: Venta por Libra y Eventos (Aquí van las Taquizas) */}
           <div className="bg-white p-8 rounded-3xl border border-orange-200 shadow-lg">
             <div className="flex items-center gap-3 mb-8">
               <ShoppingBag className="text-orange-600 w-8 h-8" />
@@ -48,10 +48,26 @@ export default function WeekendSection() {
             </div>
             
             <ul className="space-y-6">
-              {tMenu.items.bulk.map((item, index) => (
+              {tMenu.items.bulk.map((item: any, index: number) => (
                 <li key={index} className="border-b border-orange-100 pb-4 last:border-0">
-                  <h4 className="text-xl font-bold text-zinc-900 mb-1">{item.name}</h4>
-                  <p className="text-gray-500 text-sm">{item.description}</p>
+                  <div className="flex justify-between items-start">
+                    <div>
+                        <h4 className="text-xl font-bold text-zinc-900 mb-1">{item.name}</h4>
+                        <p className="text-gray-500 text-sm mb-2">{item.description}</p>
+                    </div>
+                  </div>
+                  
+                  {/* Lógica para mostrar imagen si existe (Para las Taquizas) */}
+                  {item.image && (
+                      <div className="relative w-full h-48 mt-4 rounded-xl overflow-hidden border border-orange-100 shadow-sm">
+                          <Image 
+                            src={item.image} 
+                            alt={item.name} 
+                            fill 
+                            className="object-cover hover:scale-105 transition-transform duration-500"
+                          />
+                      </div>
+                  )}
                 </li>
               ))}
             </ul>

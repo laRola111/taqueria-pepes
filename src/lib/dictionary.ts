@@ -66,7 +66,7 @@ export const dictionary = {
           "Campechano",
           "Mole Verde",
           "(Trompo en pastor y sirlon)",
-          ],
+        ],
       },
       items: {
         breakfast: [
@@ -211,7 +211,7 @@ export const dictionary = {
           { name: "Aguas Frescas" },
           { name: "Coca-Cola Mexicana" },
           { name: "Jarritos" },
-          { name: "Sangría" },-+-
+          { name: "Sangría" },
           { name: "Sidral" },
           { name: "Squert" },
           { name: "Boing de Mango y Guayaba" },

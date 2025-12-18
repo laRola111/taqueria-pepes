@@ -44,7 +44,7 @@ export default function Navbar() {
               <span className={`font-bold text-2xl tracking-wider font-serif leading-none ${scrolled ? 'text-zinc-900' : 'text-zinc-900 md:text-zinc-900'}`}>
                 TAQUERÍA
               </span>
-              <span className="text-orange-600 font-bold text-xl leading-none">PEPES</span>
+              <span className="text-orange-600 font-bold text-xl leading-none">PEPE'S</span>
             </div>
           </Link>
 

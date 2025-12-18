@@ -25,7 +25,7 @@ export default function Hero() {
           
           <h1 className="text-5xl md:text-7xl font-black text-zinc-900 mb-6 font-serif leading-tight">
             TAQUERÍA <br/>
-            <span className="text-orange-600">PEPES</span>
+            <span className="text-orange-600">PEPE'S</span>
           </h1>
           
           <p className="text-xl text-gray-600 mb-8 max-w-lg mx-auto lg:mx-0 font-light leading-relaxed">

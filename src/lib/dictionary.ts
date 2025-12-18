@@ -2,13 +2,14 @@ export const dictionary = {
   es: {
     hero: {
       title: "Auténtico Sabor Mexicano",
-      subtitle: "Los mejores tacos, antojitos y barbacoa en Pflugerville. Tradición y calidad en cada mordida.",
+      subtitle:
+        "Los mejores tacos, antojitos y barbacoa en Pflugerville. Tradición y calidad en cada mordida.",
       cta: "Ver Menú",
     },
     promos: {
       highlight1: "🌮 TORTILLAS HECHAS A MANO",
       highlight2: "🔥 PREGUNTA POR EL ESPECIAL DEL DÍA",
-      deal: "✨ JUEVES TACOS AL PASTOR 2X1 ✨"
+      deal: "✨ JUEVES TACOS AL PASTOR 2X1 ✨",
     },
     chefFavorites: {
       title: "Recomendados del Chef",
@@ -16,20 +17,23 @@ export const dictionary = {
       items: [
         {
           name: "Tacos al Pastor",
-          description: "La joya de la casa. Carne marinada en trompo con piña, cilantro y cebolla.",
-          image: "/platillos/tacos.png"
+          description:
+            "La joya de la casa. Carne marinada en trompo con piña, cilantro y cebolla.",
+          image: "/platillos/tacos.png",
         },
         {
           name: "Quesabirria",
-          description: "La favorita de todos. Tortilla doradita, mucho queso, birria y su consomé.",
-          image: "/platillos/quesabirria.png"
+          description:
+            "La favorita de todos. Tortilla doradita, mucho queso, birria y su consomé.",
+          image: "/platillos/quesabirria2.png",
         },
         {
-          name: "Barbacoa",
-          description: "Suave, jugosa y con ese sabor casero inigualable. Disponible todos los días.",
-          image: "/platillos/BarbacoaF.jpeg"
-        }
-      ]
+          name: "Barbacoa de Res",
+          description:
+            "Suave, jugosa y con ese sabor casero inigualable. Disponible todos los días.",
+          image: "/platillos/bbqres.png",
+        },
+      ],
     },
     menu: {
       title: "Nuestro Menú",
@@ -41,19 +45,21 @@ export const dictionary = {
         sides: "Acompañantes",
         drinks: "Bebidas",
         weekend: "Fin de Semana (Sáb y Dom)",
-        bulk: "Venta por Libra y Eventos"
+        bulk: "Venta por Libra y Eventos",
       },
       meats: {
         title: "Elige tu Carne Favorita",
-        subtitle: "Disponibles para Tacos, Gorditas, Sopes, Tortas y Quesadillas",
+        subtitle:
+          "Disponibles para Tacos, Gorditas, Sopes, Tortas y Quesadillas",
         list: [
           "Cecina",
           "Longaniza",
-          "Pastor (Trompo)",
+          "Sirlon",
+          "Pastor",
           "Adobada",
           "Suadero",
           "Chicharrón",
-          "Fajita de Pollo", 
+          "Fajita de Pollo",
           "Fajita de Res",
           "Tinga de Pollo",
           "Chorizo Verde",
@@ -61,128 +67,156 @@ export const dictionary = {
           "Tripa",
           "Campechano",
           "Mole Verde",
-          "Sirlon"
-        ]
+          ],
       },
       items: {
         breakfast: [
-            {
-                name: "Tacos de Desayuno",
-                description: "Huevo con: Jamón, Tocino, Salchicha, Migas, Nopal, Frijol, Queso.",
-                image: "/platillos/breakfastTacos.png" 
-            }
+          {
+            name: "Tacos de Desayuno",
+            description:
+              "Huevo con: Jamón, Tocino, Salchicha, Migas, Nopal, Frijol, Queso.",
+            image: "/platillos/breakfastTacos.png",
+          },
         ],
         antojitos: [
-          { 
-            name: "Tacos", 
-            description: "¡Con tortilla hecha a mano! Elige tu carne favorita.", 
-            image: "/platillos/taco.png" 
+          {
+            name: "Tacos",
+            description: "¡Con tortilla hecha a mano! Elige tu carne favorita.",
+            image: "/platillos/taco.png",
           },
-          { 
-            name: "Flautas", 
-            description: "Incluye: Arroz, Frijol, Cebolla cambray y Chile toreado.", 
-            image: "/platillos/flautas.png" 
+          {
+            name: "Flautas",
+            description:
+              "Incluye: Arroz, Frijol, Cebolla cambray y Chile toreado.",
+            image: "/platillos/flautas.png",
           },
-          { 
-            name: "Sopes", 
-            description: "Base de masa artesanal con frijoles, lechuga, crema, queso y carne al gusto.", 
-            image: "/platillos/sopes.png" 
+          {
+            name: "Sopes",
+            description:
+              "Base de masa artesanal con frijoles, lechuga, crema, queso y carne al gusto.",
+            image: "/platillos/sopes.png",
           },
-          { 
-            name: "Gorditas", 
-            description: "Rellenas de guisado a tu elección con lechuga, queso y crema.", 
-            image: "/platillos/gorditas.png" 
+          {
+            name: "Gorditas",
+            description:
+              "Rellenas de guisado a tu elección con lechuga, queso y crema.",
+            image: "/platillos/gorditas.png",
           },
-          { 
-            name: "Quesadilla de Maíz", 
-            description: "Tortilla hecha a mano con queso fundido y carne.", 
-            image: "/platillos/quesadillaDeMaiz.png" 
+          {
+            name: "Quesadilla de Maíz",
+            description: "Tortilla hecha a mano con queso fundido y carne.",
+            image: "/platillos/quesadillaDeMaiz.png",
           },
-          { 
-            name: "Torta", 
-            description: "Estilo Cubana y Carne de su preferencia.", 
-            image: "/platillos/torta.png" 
+          {
+            name: "Torta",
+            description: "Estilo Cubana y Carne de su preferencia.",
+            image: "/platillos/torta.png",
           },
-          { 
-            name: "Chilaquiles", 
-            description: "Totopos bañados en salsa, crema, queso y carne.", 
-            image: "/platillos/chilaquiles.png" 
+          {
+            name: "Chilaquiles",
+            description: "Totopos bañados en salsa, crema, queso y carne.",
+            image: "/platillos/chilaquiles.png",
           },
-          { 
-            name: "Burrito", 
-            description: "Gran tortilla de harina rellena de carne, arroz y frijol.", 
-            image: "/platillos/Burrito.png" 
+          {
+            name: "Burrito",
+            description:
+              "Gran tortilla de harina rellena de carne, arroz y frijol.",
+            image: "/platillos/Burrito.png",
           },
-          { 
-            name: "Pambazos", 
-            description: "Pan bañado en salsa guajillo relleno de papa con chorizo.", 
-            image: "/platillos/pambazo.png" 
+          {
+            name: "Pambazos",
+            description:
+              "Pan bañado en salsa guajillo relleno de la carne de su elección.",
+            image: "/platillos/pambazo.png",
           },
-          { 
-            name: "Enchiladas", 
-            description: "Tres tortillas rellenas bañadas en salsa (roja/verde) con arroz y frijol.", 
-            image: "/platillos/Enchiladas.png" 
+          {
+            name: "Enchiladas",
+            description:
+              "Tres tortillas rellenas bañadas en salsa (roja/verde) con arroz y frijol.",
+            image: "/platillos/Enchiladas.png",
           },
-          { 
-            name: "Quesadillas (Harina)", 
-            description: "Tortilla de harina grande con queso y carne.", 
-            image: "/platillos/Quesadilla.png" 
+          {
+            name: "Quesadillas (Harina)",
+            description: "Tortilla de harina grande con queso y carne.",
+            image: "/platillos/Quesadilla.png",
           },
-          { 
-            name: "Gringas", 
-            description: "Dos tortillas de harina con queso y carne al pastor.", 
-            image: "/platillos/gringas.png" 
+          {
+            name: "Gringas",
+            description: "Dos tortillas de harina con queso y carne al pastor.",
+            image: "/platillos/gringas.png",
           },
-          { 
-            name: "Quesabirria", 
-            description: "Tacos de birria con queso fundido y consomé.", 
-            image: "/platillos/quesabirria.png"
+          {
+            name: "Quesabirria",
+            description: "Tacos de birria con queso fundido y consomé.",
+            image: "/platillos/quesabirria2.png",
           },
         ],
         specialties: [
-          // { 
-          //   name: "Platillo del Día", 
-          //   description: "Pregunta por nuestro especial de hoy.", 
-          //   image: "/platillos/tacos.png" 
+          // {
+          //   name: "Platillo del Día",
+          //   description: "Pregunta por nuestro especial de hoy.",
+          //   image: "/platillos/tacos.png"
           // },
-          { 
-            name: "Barbacoa de Res", 
-            description: "Disponible todos los días.", 
-            image: "/platillos/BarbacoaRes.png" 
-          }
+          {
+            name: "Barbacoa de Res",
+            description: "Disponible todos los días.",
+            image: "/platillos/bbqres.png",
+          },
+          {
+            name: "Barbacoa de Chivo",
+            description: "Disponible Fines de Semana.",
+            image: "/platillos/BarbacoaRes.png",
+          },
         ],
         weekend: [
-          { 
-            name: "Servido de Chivo", 
-            description: "Barbacoa de chivo (Sábados y Domingos).", 
-            image: "/platillos/BarbacoaF.jpeg" 
+          {
+            name: "Servido de Chivo",
+            description: "Barbacoa de chivo (Sábados y Domingos).",
+            image: "/platillos/BarbacoaRes.png",
           },
-          { 
-            name: "Menudo", 
-            description: "Acompañado de tortillas hechas a mano (Sábados y Domingos).", 
-            image: "/platillos/menudo.png" 
+          {
+            name: "Menudo",
+            description:
+              "Acompañado de tortillas hechas a mano (Sábados y Domingos).",
+            image: "/platillos/menudo.png",
           },
-          { 
-            name: "Consomé", 
-            description: "De Chivo o Res.", 
-            image: "/platillos/consome.png" 
+          {
+            name: "Consomé",
+            description: "De Chivo o Res.",
+            image: "/platillos/consome.png",
           },
         ],
         bulk: [
-          { name: "Carne cocida por libra", description: "Incluye tortillas, salsas y verduras." },
-          { name: "Carne cruda por libra", description: "Opciones: Cecina, Adobada o Longaniza." },
-          { name: "Taquizas para eventos", description: "Servicio completo para todo tipo de fiesta.", image: "/platillos/taquizas.jpeg" },
+          {
+            name: "Carne cocida por libra",
+            description: "Incluye tortillas, salsas y verduras.",
+          },
+          {
+            name: "Carne cruda por libra",
+            description: "Opciones: Cecina, Adobada o Longaniza.",
+          },
+          {
+            name: "Taquizas para eventos",
+            description: "Servicio completo para todo tipo de fiesta.",
+            image: "/platillos/taquizas.jpeg",
+          },
         ],
         sides: [
           { name: "Arroz Mexicano" },
           { name: "Frijoles" },
           { name: "Cebollitas Asadas" },
           { name: "Chiles Toreados" },
+          { name: "Aguacate" },
         ],
         drinks: [
           { name: "Aguas Frescas" },
           { name: "Coca-Cola Mexicana" },
-        ]
+          { name: "Jarritos" },
+          { name: "Sangría" },
+          { name: "Sidral" },
+          { name: "Squert" },
+          { name: "Boing de Mango y Guayaba" },
+        ],
       },
     },
     reviews: {
@@ -192,28 +226,29 @@ export const dictionary = {
         {
           name: "Carlos M.",
           text: "¡Los mejores tacos de Pflugerville! Las tortillas hechas a mano hacen toda la diferencia.",
-          stars: 5
+          stars: 5,
         },
         {
           name: "Sarah Jenkins",
           text: "Ordered the Barbacoa and it was incredible. Super authentic flavor. Highly recommended!",
-          stars: 5
+          stars: 5,
         },
         {
           name: "Familia Rodriguez",
           text: "Venimos cada domingo por el Menudo y la Barbacoa de Chivo. El servicio siempre es excelente.",
-          stars: 5
-        }
-      ]
+          stars: 5,
+        },
+      ],
     },
     videos: {
       title: "Vive la Experiencia",
-      subtitle: "Así se disfruta en Taquería Pepes"
+      subtitle: "Así se disfruta en Taquería Pepes",
     },
     contact: {
       address: "13525 Dessau Rd, Pflugerville, TX 78660",
       phone: "+1 (512) 748-8752",
-      whatsappMessage: "Hola Taquería Pepes, vi su menú web y me gustaría hacer un pedido. 🌮",
+      whatsappMessage:
+        "Hola Taquería Pepes, vi su menú web y me gustaría hacer un pedido. 🌮",
       hours: {
         week: "Lunes - Domingo",
         time: "9:00 AM - 10:00 PM",
@@ -221,21 +256,24 @@ export const dictionary = {
       doordashBtn: "Pedir por DoorDash",
       socials: {
         facebook: "https://www.facebook.com/share/17f6nAPQoe/?mibextid=wwXIfr",
-        instagram: "https://www.instagram.com/taqueria_pepes_atx_llc_?igsh=YjBqaTJ1czM0dzN2&utm_source=qr",
-        tiktok: "https://www.tiktok.com/@taqueria.pepes5?_r=1&_t=ZP-92IyP5q0uQJ"
-      }
+        instagram:
+          "https://www.instagram.com/taqueria_pepes_atx_llc_?igsh=YjBqaTJ1czM0dzN2&utm_source=qr",
+        tiktok:
+          "https://www.tiktok.com/@taqueria.pepes5?_r=1&_t=ZP-92IyP5q0uQJ",
+      },
     },
   },
   en: {
     hero: {
       title: "Authentic Mexican Flavor",
-      subtitle: "The best tacos, antojitos and barbacoa in Pflugerville. Tradition in every bite.",
+      subtitle:
+        "The best tacos, antojitos and barbacoa in Pflugerville. Tradition in every bite.",
       cta: "View Menu",
     },
     promos: {
       highlight1: "🌮 HANDMADE TORTILLAS",
       highlight2: "🔥 ASK FOR THE DAILY SPECIAL",
-      deal: "✨ THURSDAY PASTOR TACOS 2X1 ✨"
+      deal: "✨ THURSDAY PASTOR TACOS 2X1 ✨",
     },
     chefFavorites: {
       title: "Chef's Recommendations",
@@ -243,20 +281,23 @@ export const dictionary = {
       items: [
         {
           name: "Tacos al Pastor",
-          description: "Our signature. Marinated pork on a spit with pineapple, cilantro, and onions.",
-          image: "/platillos/tacos.png"
+          description:
+            "Our signature. Marinated pork on a spit with pineapple, cilantro, and onions.",
+          image: "/platillos/tacos.png",
         },
         {
           name: "Quesabirria",
-          description: "Fan favorite. Crispy tortilla, lots of cheese, birria, and consommé dip.",
-          image: "/platillos/quesadillaDeMaiz.png"
+          description:
+            "Fan favorite. Crispy tortilla, lots of cheese, birria, and consommé dip.",
+          image: "/platillos/quesadillaDeMaiz.png",
         },
         {
           name: "Barbacoa",
-          description: "Tender, juicy, and with that unmatched homemade flavor. Available every day.",
-          image: "/platillos/BarbacoaF.jpeg"
-        }
-      ]
+          description:
+            "Tender, juicy, and with that unmatched homemade flavor. Available every day.",
+          image: "/platillos/BarbacoaF.jpeg",
+        },
+      ],
     },
     menu: {
       title: "Our Menu",
@@ -268,11 +309,12 @@ export const dictionary = {
         sides: "Sides",
         drinks: "Drinks",
         weekend: "Weekend Specials (Sat & Sun)",
-        bulk: "By the Pound & Events"
+        bulk: "By the Pound & Events",
       },
       meats: {
         title: "Choose Your Meat",
-        subtitle: "Available for Tacos, Gorditas, Sopes, Tortas and Quesadillas",
+        subtitle:
+          "Available for Tacos, Gorditas, Sopes, Tortas and Quesadillas",
         list: [
           "Cecina (Salted Beef)",
           "Longaniza (Sausage)",
@@ -280,7 +322,7 @@ export const dictionary = {
           "Adobada (Marinated)",
           "Suadero (Brisket)",
           "Chicharrón (Pork Skin)",
-          "Chicken Fajita", 
+          "Chicken Fajita",
           "Beef Fajita",
           "Chicken Tinga",
           "Green Chorizo",
@@ -288,117 +330,136 @@ export const dictionary = {
           "Tripa (Tripe)",
           "Campechano (Mixed)",
           "Mole Verde",
-          "Sirloin"
-        ]
+          "Sirloin",
+        ],
       },
       items: {
         breakfast: [
-            {
-                name: "Breakfast Tacos",
-                description: "Eggs with: Ham, Bacon, Sausage, Migas, Nopal, Beans, Cheese.",
-                image: "/platillos/breakfastTacos.png" 
-            }
+          {
+            name: "Breakfast Tacos",
+            description:
+              "Eggs with: Ham, Bacon, Sausage, Migas, Nopal, Beans, Cheese.",
+            image: "/platillos/breakfastTacos.png",
+          },
         ],
         antojitos: [
-          { 
-            name: "Tacos", 
-            description: "With handmade tortilla! Choose your favorite meat.", 
-            image: "/taco.png" 
+          {
+            name: "Tacos",
+            description: "With handmade tortilla! Choose your favorite meat.",
+            image: "/taco.png",
           },
-          { 
-            name: "Flautas", 
-            description: "Includes: Rice, Beans, Grilled Onions and Roasted Chili.", 
-            image: "/platillos/flautas.png" 
+          {
+            name: "Flautas",
+            description:
+              "Includes: Rice, Beans, Grilled Onions and Roasted Chili.",
+            image: "/platillos/flautas.png",
           },
-          { 
-            name: "Sopes", 
-            description: "Thick corn base topped with beans, lettuce, cream, cheese and meat.", 
-            image: "/platillos/sopes.png" 
+          {
+            name: "Sopes",
+            description:
+              "Thick corn base topped with beans, lettuce, cream, cheese and meat.",
+            image: "/platillos/sopes.png",
           },
-          { 
-            name: "Gorditas", 
-            description: "Stuffed corn pockets with your choice of stew, lettuce, cheese and cream.", 
-            image: "/platillos/gorditas.png" 
+          {
+            name: "Gorditas",
+            description:
+              "Stuffed corn pockets with your choice of stew, lettuce, cheese and cream.",
+            image: "/platillos/gorditas.png",
           },
-          { 
-            name: "Corn Quesadilla", 
-            description: "Handmade tortilla with melted cheese and meat.", 
-            image: "/platillos/quesadillaDeMaiz.png" 
+          {
+            name: "Corn Quesadilla",
+            description: "Handmade tortilla with melted cheese and meat.",
+            image: "/platillos/quesadillaDeMaiz.png",
           },
-          { 
-            name: "Torta", 
-            description: "Cubana style or meat of your choice.", 
-            image: "/platillos/torta.png" 
+          {
+            name: "Torta",
+            description: "Cubana style or meat of your choice.",
+            image: "/platillos/torta.png",
           },
-          { 
-            name: "Chilaquiles", 
-            description: "Fried corn chips covered in salsa, cream, cheese and meat.", 
-            image: "/platillos/chilaquiles.png" 
+          {
+            name: "Chilaquiles",
+            description:
+              "Fried corn chips covered in salsa, cream, cheese and meat.",
+            image: "/platillos/chilaquiles.png",
           },
-          { 
-            name: "Burrito", 
-            description: "Large flour tortilla filled with meat, rice and beans.", 
-            image: "/platillos/Burrito.png" 
+          {
+            name: "Burrito",
+            description:
+              "Large flour tortilla filled with meat, rice and beans.",
+            image: "/platillos/Burrito.png",
           },
-          { 
-            name: "Pambazos", 
-            description: "Bread dipped in guajillo sauce filled with potato and chorizo.", 
-            image: "/platillos/pambazo.png" 
+          {
+            name: "Pambazos",
+            description:
+              "Bread dipped in guajillo sauce filled with potato and chorizo.",
+            image: "/platillos/pambazo.png",
           },
-          { 
-            name: "Enchiladas", 
-            description: "Three filled tortillas covered in salsa (red/green) with rice and beans.", 
-            image: "/platillos/Enchiladas.png" 
+          {
+            name: "Enchiladas",
+            description:
+              "Three filled tortillas covered in salsa (red/green) with rice and beans.",
+            image: "/platillos/Enchiladas.png",
           },
-          { 
-            name: "Quesadillas (Flour)", 
-            description: "Large flour tortilla with cheese and meat.", 
-            image: "/platillos/Quesadilla.png" 
+          {
+            name: "Quesadillas (Flour)",
+            description: "Large flour tortilla with cheese and meat.",
+            image: "/platillos/Quesadilla.png",
           },
-          { 
-            name: "Gringas", 
-            description: "Two flour tortillas with cheese and pastor meat.", 
-            image: "/platillos/gringas.png" 
+          {
+            name: "Gringas",
+            description: "Two flour tortillas with cheese and pastor meat.",
+            image: "/platillos/gringas.png",
           },
-          { 
-            name: "Quesabirria", 
-            description: "Birria tacos with melted cheese and consommé.", 
-            image: "/platillos/tacos.png"
+          {
+            name: "Quesabirria",
+            description: "Birria tacos with melted cheese and consommé.",
+            image: "/platillos/tacos.png",
           },
         ],
         specialties: [
-          // { 
-          //   name: "Daily Special", 
-          //   description: "Ask for today's special plate.", 
-          //   image: "/platillos/tacos.png" 
+          // {
+          //   name: "Daily Special",
+          //   description: "Ask for today's special plate.",
+          //   image: "/platillos/tacos.png"
           // },
-          { 
-            name: "Beef Barbacoa", 
-            description: "Available every day.", 
-            image: "/platillos/BarbacoaRes.jpeg" 
-          }
+          {
+            name: "Beef Barbacoa",
+            description: "Available every day.",
+            image: "/platillos/BarbacoaRes.jpeg",
+          },
         ],
         weekend: [
-           { 
-             name: "Goat Plate", 
-             description: "Goat Barbacoa (Saturdays and Sundays).", 
-             image: "/platillos/BarbacoaF.jpeg" 
-           },
-           { 
-             name: "Menudo", 
-             description: "Served with handmade tortillas (Saturdays and Sundays).", 
-             image: "/platillos/menudo.png" 
-           },
-           { 
-             name: "Consomé", 
-             description: "Goat or Beef broth.", 
-             image: "/platillos/consome.png" 
-           },
+          {
+            name: "Goat Plate",
+            description: "Goat Barbacoa (Saturdays and Sundays).",
+            image: "/platillos/BarbacoaF.jpeg",
+          },
+          {
+            name: "Menudo",
+            description:
+              "Served with handmade tortillas (Saturdays and Sundays).",
+            image: "/platillos/menudo.png",
+          },
+          {
+            name: "Consomé",
+            description: "Goat or Beef broth.",
+            image: "/platillos/consome.png",
+          },
         ],
         bulk: [
-          { name: "Cooked Meat by Pound", description: "Includes tortillas, salsas and veggies." },
-          { name: "Raw Meat by Pound", description: "Options: Cecina, Adobada or Longaniza." },
-          { name: "Taquizas for Events", description: "Full service for any type of party.", image: "/platillos/taquizas.jpeg" },
+          {
+            name: "Cooked Meat by Pound",
+            description: "Includes tortillas, salsas and veggies.",
+          },
+          {
+            name: "Raw Meat by Pound",
+            description: "Options: Cecina, Adobada or Longaniza.",
+          },
+          {
+            name: "Taquizas for Events",
+            description: "Full service for any type of party.",
+            image: "/platillos/taquizas.jpeg",
+          },
         ],
         sides: [
           { name: "Mexican Rice" },
@@ -410,7 +471,7 @@ export const dictionary = {
           { name: "Aguas Frescas" },
           { name: "Mexican Coke" },
           { name: "Jarritos" },
-        ]
+        ],
       },
     },
     reviews: {
@@ -420,28 +481,29 @@ export const dictionary = {
         {
           name: "Carlos M.",
           text: "The best tacos in Pflugerville! The handmade tortillas make all the difference.",
-          stars: 5
+          stars: 5,
         },
         {
           name: "Sarah Jenkins",
           text: "Ordered the Barbacoa and it was incredible. Super authentic flavor. Highly recommended!",
-          stars: 5
+          stars: 5,
         },
         {
           name: "The Rodriguez Family",
           text: "We come every Sunday for Menudo and Goat Barbacoa. The service is always excellent.",
-          stars: 5
-        }
-      ]
+          stars: 5,
+        },
+      ],
     },
     videos: {
       title: "Live the Experience",
-      subtitle: "This is how we enjoy Taquería Pepes"
+      subtitle: "This is how we enjoy Taquería Pepes",
     },
     contact: {
       address: "13525 Dessau Rd, Pflugerville, TX 78660",
       phone: "+1 (512) 748-8752",
-      whatsappMessage: "Hello Taquería Pepes, I saw your menu online and would like to place an order. 🌮",
+      whatsappMessage:
+        "Hello Taquería Pepes, I saw your menu online and would like to place an order. 🌮",
       hours: {
         week: "Monday - Sunday",
         time: "9:00 AM - 10:00 PM",
@@ -449,9 +511,11 @@ export const dictionary = {
       doordashBtn: "Order via DoorDash",
       socials: {
         facebook: "https://www.facebook.com/share/17f6nAPQoe/?mibextid=wwXIfr",
-        instagram: "https://www.instagram.com/taqueria_pepes_atx_llc_?igsh=YjBqaTJ1czM0dzN2&utm_source=qr",
-        tiktok: "https://www.tiktok.com/@taqueria.pepes5?_r=1&_t=ZP-92IyP5q0uQJ"
-      }
+        instagram:
+          "https://www.instagram.com/taqueria_pepes_atx_llc_?igsh=YjBqaTJ1czM0dzN2&utm_source=qr",
+        tiktok:
+          "https://www.tiktok.com/@taqueria.pepes5?_r=1&_t=ZP-92IyP5q0uQJ",
+      },
     },
   },
 };

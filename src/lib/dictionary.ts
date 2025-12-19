@@ -288,13 +288,13 @@ export const dictionary = {
           name: "Quesabirria",
           description:
             "Fan favorite. Crispy tortilla, lots of cheese, birria, and consommé dip.",
-          image: "/platillos/quesadillaDeMaiz.png",
+          image: "/platillos/quesabirria2.png",
         },
         {
-          name: "Barbacoa",
+          name: "Beef Barbacoa",
           description:
             "Tender, juicy, and with that unmatched homemade flavor. Available every day.",
-          image: "/platillos/BarbacoaF.jpeg",
+          image: "/platillos/bbqres.png",
         },
       ],
     },
@@ -317,7 +317,6 @@ export const dictionary = {
         list: [
           "Cecina (Salted Beef)",
           "Longaniza (Sausage)",
-          "Pastor (Pork)",
           "Adobada (Marinated)",
           "Suadero (Brisket)",
           "Chicharrón (Pork Skin)",
@@ -329,7 +328,7 @@ export const dictionary = {
           "Tripa (Tripe)",
           "Campechano (Mixed)",
           "Mole Verde",
-          "Sirloin",
+          "(Spit-roasted Pastor & Sirloin)",
         ],
       },
       items: {
@@ -345,7 +344,7 @@ export const dictionary = {
           {
             name: "Tacos",
             description: "With handmade tortilla! Choose your favorite meat.",
-            image: "/taco.png",
+            image: "/platillos/taco.png",
           },
           {
             name: "Flautas",
@@ -383,8 +382,7 @@ export const dictionary = {
           },
           {
             name: "Burrito",
-            description:
-              "Large flour tortilla filled with meat, rice and beans.",
+            description: "Large flour tortilla filled with meat, rice and beans.",
             image: "/platillos/Burrito.png",
           },
           {
@@ -412,7 +410,7 @@ export const dictionary = {
           {
             name: "Quesabirria",
             description: "Birria tacos with melted cheese and consommé.",
-            image: "/platillos/tacos.png",
+            image: "/platillos/quesabirria2.png",
           },
         ],
         specialties: [
@@ -424,14 +422,19 @@ export const dictionary = {
           {
             name: "Beef Barbacoa",
             description: "Available every day.",
-            image: "/platillos/BarbacoaRes.jpeg",
+            image: "/platillos/bbqres.png",
+          },
+          {
+            name: "Goat Barbacoa",
+            description: "Available on Weekends.",
+            image: "/platillos/BarbacoaRes.png",
           },
         ],
         weekend: [
           {
             name: "Goat Plate",
             description: "Goat Barbacoa (Saturdays and Sundays).",
-            image: "/platillos/BarbacoaF.jpeg",
+            image: "/platillos/BarbacoaRes.png",
           },
           {
             name: "Menudo",
@@ -465,11 +468,16 @@ export const dictionary = {
           { name: "Refried Beans" },
           { name: "Grilled Onions" },
           { name: "Chiles Toreados (Blistered Peppers)" },
+          { name: "Avocado" },
         ],
         drinks: [
           { name: "Aguas Frescas" },
           { name: "Mexican Coke" },
           { name: "Jarritos" },
+          { name: "Sangría" },
+          { name: "Sidral (Apple Soda)" },
+          { name: "Squirt" },
+          { name: "Boing (Mango & Guava)" },
         ],
       },
     },

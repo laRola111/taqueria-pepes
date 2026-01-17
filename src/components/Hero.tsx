@@ -13,7 +13,7 @@ export default function Hero() {
       {/* Elementos Decorativos de Fondo (Naranjas suaves) */}
       <div className="absolute top-0 right-0 w-1/2 h-full bg-orange-50/50 skew-x-12 transform origin-top-right z-0"></div>
       
-      <div className="container mx-auto px-4 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center relative z-10">
+      <div className="container mx-auto px-4 grid grid-cols-1 lg:grid-cols-2 gap-0 items-center relative z-10">
         
         {/* Columna Texto */}
         <div className="text-center lg:text-left order-2 lg:order-1">
